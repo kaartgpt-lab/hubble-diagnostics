@@ -1,54 +1,102 @@
-import { Link } from 'react-router-dom'
-import services from '../data/services.js'
+import { Link, useNavigate } from "react-router-dom";
+import services from "../data/services.js";
 
-export default function Footer(){
+export default function Footer() {
+  const navigate = useNavigate();
+
   return (
-    <footer className="footer">
-      <section className="section" style={{padding:'48px 0'}}>
-        <div className="container grid-auto">
+    <footer className="w-full bg-blue-950 text-white">
+      {/* Main Footer */}
+      <section className="py-12 px-6 sm:px-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* Logo & Description */}
           <div>
-            <div style={{display:'flex', alignItems:'center', gap:10}}>
-              <div style={{width:36, height:36, borderRadius:8, background:'rgba(255,255,255,.15)', display:'grid', placeContent:'center', fontWeight:800}}>HD</div>
-              <span style={{fontWeight:700}}>Hubble Diagnostics</span>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-9 h-9 bg-white/15 grid place-items-center font-bold rounded">
+                HD
+              </div>
+              <span className="font-bold text-lg">Hubble Diagnostics</span>
             </div>
-            <p className="p" style={{color:'#fff', opacity:.9}}>Comprehensive diagnostic and lab testing services.</p>
+            <p className="text-gray-200">
+              Comprehensive diagnostic and lab testing services.
+            </p>
           </div>
 
+          {/* Navigation */}
           <div>
-            <h2 className="h2" style={{fontSize:16}}>Navigation</h2>
-            <ul style={{listStyle:'none', padding:0, marginTop:12}}>
-              <li style={{marginTop:8}}><Link to="/" style={{color:'#fff', textDecoration:'none'}}>Home</Link></li>
-              <li style={{marginTop:8}}><Link to="/services" style={{color:'#fff', textDecoration:'none'}}>Services</Link></li>
-              <li style={{marginTop:8}}><Link to="/gallery" style={{color:'#fff', textDecoration:'none'}}>Gallery</Link></li>
-              <li style={{marginTop:8}}><Link to="/contact" style={{color:'#fff', textDecoration:'none'}}>Contact</Link></li>
+            <h2 className="text-gray-200 font-semibold text-sm mb-3">
+              Navigation
+            </h2>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/" className="hover:text-blue-300 transition">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="hover:text-blue-300 transition">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/gallery" className="hover:text-blue-300 transition">
+                  Gallery
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-blue-300 transition">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
+          {/* All Services */}
           <div>
-            <h2 className="h2" style={{fontSize:16}}>All Services</h2>
-            <ul style={{listStyle:'none', padding:0, marginTop:12}}>
-              {services.map(s => (
-                <li key={s.slug} style={{marginTop:8}}><Link to={`/services/${s.slug}`} style={{color:'#fff', textDecoration:'none'}}>{s.title}</Link></li>
+            <h2 className="text-gray-200 font-semibold text-sm mb-3">
+              All Services
+            </h2>
+            <ul className="space-y-2">
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    to={`/services/${s.slug}`}
+                    className="hover:text-blue-300 transition"
+                  >
+                    {s.title}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
 
+          {/* Contact */}
           <div>
-            <h2 className="h2" style={{fontSize:16}}>Contact</h2>
-            <ul style={{listStyle:'none', padding:0, marginTop:12, opacity:.95}}>
+            <h2 className="text-gray-200 font-semibold text-sm mb-3">
+              Contact
+            </h2>
+            <ul className="space-y-1 text-gray-200 mb-4">
               <li>+91 98765 43210</li>
               <li>info@hubblediagnostics.example</li>
               <li>45, Health Avenue, Your City</li>
             </ul>
+            <button
+              onClick={() => navigate("/contact")}
+              className="bg-white text-blue-950 font-semibold px-4 py-2 rounded hover:bg-blue-100 transition"
+            >
+              Contact Us
+            </button>
           </div>
         </div>
       </section>
-      <div style={{borderTop:'1px solid rgba(255,255,255,.25)'}}>
-        <div className="container" style={{display:'flex', alignItems:'center', justifyContent:'space-between', padding:'12px 20px', color:'#fff', opacity:.9}}>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-white/25">
+        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between py-3 px-6 sm:px-12 text-gray-200 text-sm">
           <div>© {new Date().getFullYear()} Hubble Diagnostics</div>
-          <div>Precision. Care. Trust.</div>
+          <div className="mt-2 sm:mt-0">Precision. Care. Trust.</div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
