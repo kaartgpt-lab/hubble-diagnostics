@@ -11,7 +11,7 @@ export default function Header() {
   const links = [
     { label: "Home", to: "/" },
     { label: "Hubble Health Foundation", to: "/foundation" },
-    { label: "Our Doctors", to: "/doctors" },
+    { label: "Our Doctors", to: "/ourdoctors" },
     { label: "FAQs", to: "/faqs" },
     { label: "About Us", to: "/about" },
   ];

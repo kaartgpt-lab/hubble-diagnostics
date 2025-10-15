@@ -6,6 +6,7 @@ import YouTubeSection from "../components/Youtube.jsx";
 import Testimonials from "../components/Testimonials.jsx";
 import Doctors from "../components/Doctors.jsx";
 import { FaInstagram } from "react-icons/fa";
+import HomeFAQs from "../components/FAQSection.jsx";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -92,6 +93,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <HomeFAQs />
     </>
   );
 }

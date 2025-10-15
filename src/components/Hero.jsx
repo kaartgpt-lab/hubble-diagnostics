@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -25,12 +26,18 @@ export default function Hero() {
         {/* Buttons + Opening Hours */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-blue-950 hover:bg-blue-800 text-white px-5 py-2.5 rounded-lg transition text-sm">
+            <Link
+              to="/book-appointment"
+              className="bg-blue-950 hover:bg-blue-800 text-white px-5 py-2.5 rounded-lg transition text-sm text-center"
+            >
               Book Your Appointment
-            </button>
-            <button className="border border-blue-950 hover:bg-blue-950 hover:text-white px-5 py-2.5 rounded-lg transition text-sm">
-              Schedule Appointment
-            </button>
+            </Link>
+            <Link
+              to="/contact"
+              className="border border-white hover:bg-gray-700 text-white hover:text-white px-5 py-2.5 rounded-lg transition text-sm text-center"
+            >
+              Contact Us
+            </Link>
           </div>
 
           <div className="bg-white/10 backdrop-blur-md p-5 rounded-lg max-w-xs mx-auto sm:mx-0">

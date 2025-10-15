@@ -1,7 +1,10 @@
 import doctors from "../data/doctors";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
-export default function Doctors() {
+export default function HomeDoctors() {
+  // Filter only doctors with home: true
+  const homeDoctors = doctors.filter((doc) => doc.home);
+
   return (
     <section className="w-full bg-blue-950 py-12">
       <div className="container mx-auto px-4 sm:px-8">
@@ -10,7 +13,7 @@ export default function Doctors() {
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {doctors.map((doc) => (
+          {homeDoctors.map((doc) => (
             <div
               key={doc.id}
               className="bg-white text-blue-950 rounded-lg overflow-hidden flex flex-col items-center text-center p-4"

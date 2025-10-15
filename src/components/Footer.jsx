@@ -34,18 +34,34 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link
+                  to="/foundation"
+                  className="hover:text-blue-300 transition"
+                >
+                  Hubble Health Foundation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/ourdoctors"
+                  className="hover:text-blue-300 transition"
+                >
+                  Our Doctors
+                </Link>
+              </li>
+              <li>
                 <Link to="/services" className="hover:text-blue-300 transition">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/gallery" className="hover:text-blue-300 transition">
-                  Gallery
+                <Link to="/faqs" className="hover:text-blue-300 transition">
+                  FAQs
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-blue-300 transition">
-                  Contact
+                <Link to="/about" className="hover:text-blue-300 transition">
+                  About Us
                 </Link>
               </li>
             </ul>
@@ -82,7 +98,7 @@ export default function Footer() {
             </ul>
             <button
               onClick={() => navigate("/contact")}
-              className="bg-white text-blue-950 font-semibold px-4 py-2 rounded hover:bg-blue-100 transition"
+              className="bg-white text-blue-950 font-semibold px-4 py-2 rounded-sm hover:bg-blue-100 transition"
             >
               Contact Us
             </button>
