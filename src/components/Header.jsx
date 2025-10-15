@@ -30,44 +30,47 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           {links.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) =>
-                `relative font-medium hover:text-gray-200 transition ${
-                  isActive
-                    ? "after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-gray-200"
-                    : ""
-                }`
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
-
-          {/* Services Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setOpen((v) => !v)}
-              className="font-medium hover:text-gray-200 transition"
-            >
-              Services ▾
-            </button>
-
-            {open && (
-              <div
-                onMouseLeave={() => setOpen(false)}
-                className="absolute left-0 top-8 bg-white text-gray-800 rounded-lg shadow-lg border border-gray-200 min-w-[260px] z-50"
+            <div key={link.to} className="relative">
+              <NavLink
+                to={link.to}
+                className={({ isActive }) =>
+                  `relative font-medium hover:text-gray-200 transition ${
+                    isActive
+                      ? "after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-gray-200"
+                      : ""
+                  }`
+                }
               >
-                <ServicesDropdown
-                  onNavigate={(href) => {
-                    setOpen(false);
-                    navigate(href);
-                  }}
-                />
-              </div>
-            )}
-          </div>
+                {link.label}
+              </NavLink>
+
+              {/* Insert Services dropdown right after Foundation */}
+              {link.label === "Hubble Health Foundation" && (
+                <div className="inline-block ml-4 relative">
+                  <button
+                    onClick={() => setOpen((v) => !v)}
+                    className="font-medium hover:text-gray-200 transition"
+                  >
+                    Services ▾
+                  </button>
+
+                  {open && (
+                    <div
+                      onMouseLeave={() => setOpen(false)}
+                      className="absolute left-0 top-8 bg-white text-gray-800 rounded-lg shadow-lg border border-gray-200 min-w-[260px] z-50"
+                    >
+                      <ServicesDropdown
+                        onNavigate={(href) => {
+                          setOpen(false);
+                          navigate(href);
+                        }}
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
         </nav>
 
         {/* Mobile Hamburger */}
