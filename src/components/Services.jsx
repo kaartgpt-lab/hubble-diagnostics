@@ -7,11 +7,11 @@ export default function Services() {
 
   return (
     <section className="bg-gray-100 py-16 w-full">
-      <div className="px-8">
+      <div className="px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-blue-950 mb-3">
           Services We Offer
         </h2>
-        <p className="text-gray-700 mb-10 max-w-2xl">
+        <p className="text-gray-700 mb-10 text-center">
           Our services are beyond measurements and so is our commitment towards
           our patients.
         </p>

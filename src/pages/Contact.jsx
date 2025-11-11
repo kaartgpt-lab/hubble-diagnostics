@@ -50,12 +50,14 @@ export default function Contact() {
               Location
             </h3>
             <iframe
-              title="Map"
-              className="w-full h-64 rounded-lg border border-gray-300 mt-2"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3138.900928649747!2d80.299632!3d26.475973699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c39fb8fd56ac5%3A0x94f78060c31163!2sHubble%20Diagnostics%20and%20Fetal%20Medicine%20Centre%20-Hubble%20Health!5e1!3m2!1sen!2sin!4v1762837127119!5m2!1sen!2sin"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509375!2d144.9537363159047!3d-37.81627974246686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ5JzAwLjYiUyAxNDTCsDU3JzE0LjQiRQ!5e0!3m2!1sen!2sau!4v1634554321"
-            ></iframe>
+            />
           </div>
 
           {/* Contact Form */}

@@ -1,13 +1,14 @@
 const doctors = [
   {
     id: 1,
-    name: "Dr. Alice Smith",
-    specialization: "Pathology",
-    qualification: "MBBS, MD — 10+ yrs",
-    expertise: ["Hematology", "Clinical Pathology", "Biochemistry"],
+    name: "Dr. Aditya Mishra",
+    specialization: "Consultant Radiologist & Fetal Medicine Specialist",
+    qualification: "MBBS (Gold Medalist), MD (Gold Medalist)",
+    expertise:
+      "Visiting Fellow & Clinical Observership: \nNanavati & Hinduja Hospitals, Mumbai | King’s College, London | Stanford School of Medicine, USA",
     description:
-      "Dr. Alice Smith is a seasoned pathologist with extensive experience in hematology and clinical biochemistry, committed to accurate and timely diagnostics.",
-    image: "/vite.svg",
+      "A globally trained radiologist specializing in high-precision imaging and fetal diagnostics.",
+    image: "/adityamishra.png",
     home: true,
     socials: {
       facebook: "#",
@@ -18,109 +19,14 @@ const doctors = [
   {
     id: 2,
     name: "Dr. Bob Johnson",
-    specialization: "Radiology",
-    qualification: "MBBS, MD — 12+ yrs",
-    expertise: ["X-Ray", "MRI", "CT Scan", "Ultrasound"],
+    specialization: "Consultant - Fetal Medicine",
+    qualification: "MBBS, MS (Obstetrics & Gynaecology)",
+    expertise:
+      "Fetal Medicine Foundation (U.K.) Certified | Trained at CIMAR Hospital, Cochin",
     description:
-      "Dr. Bob Johnson specializes in advanced imaging techniques, including MRI and CT scans, providing precise radiological assessments.",
-    image: "/vite.svg",
+      "Expert in maternal-fetal health and prenatal screening, delivering empathetic and evidence-based care.",
+    image: "/ritumishra.png",
     home: true,
-    socials: {
-      facebook: "#",
-      twitter: "#",
-      linkedin: "#",
-    },
-  },
-  {
-    id: 3,
-    name: "Dr. Carol Williams",
-    specialization: "Fetal Medicine",
-    qualification: "MBBS, MD — 8+ yrs",
-    expertise: ["Prenatal Screening", "Ultrasound", "Genetic Counseling"],
-    description:
-      "Dr. Carol Williams focuses on fetal medicine, guiding expecting parents with prenatal screenings and genetic counseling.",
-    image: "/vite.svg",
-    home: false,
-    socials: {
-      facebook: "#",
-      twitter: "#",
-      linkedin: "#",
-    },
-  },
-  {
-    id: 4,
-    name: "Dr. David Lee",
-    specialization: "Pathology",
-    qualification: "MBBS, MD — 15+ yrs",
-    expertise: ["Histopathology", "Microbiology", "Cytology"],
-    description:
-      "Dr. David Lee brings over 15 years of experience in histopathology and microbiology, ensuring precise diagnostic results.",
-    image: "/vite.svg",
-    home: false,
-    socials: {
-      facebook: "#",
-      twitter: "#",
-      linkedin: "#",
-    },
-  },
-  {
-    id: 5,
-    name: "Dr. Emma Brown",
-    specialization: "Cardiology",
-    qualification: "MBBS, MD — 12+ yrs",
-    expertise: ["Echocardiography", "ECG", "Heart Disease Management"],
-    description:
-      "Dr. Emma Brown is an expert cardiologist, specializing in echocardiography and managing complex heart conditions.",
-    image: "/vite.svg",
-    home: true,
-    socials: {
-      facebook: "#",
-      twitter: "#",
-      linkedin: "#",
-    },
-  },
-  {
-    id: 6,
-    name: "Dr. Frank Miller",
-    specialization: "Neurology",
-    qualification: "MBBS, MD — 18+ yrs",
-    expertise: ["EEG", "Stroke Management", "Neurodegenerative Disorders"],
-    description:
-      "Dr. Frank Miller is a senior neurologist with expertise in stroke management and neurodegenerative diseases.",
-    image: "/vite.svg",
-    home: false,
-    socials: {
-      facebook: "#",
-      twitter: "#",
-      linkedin: "#",
-    },
-  },
-  {
-    id: 7,
-    name: "Dr. Grace Wilson",
-    specialization: "Pediatrics",
-    qualification: "MBBS, MD — 9+ yrs",
-    expertise: ["Child Care", "Vaccinations", "Growth Monitoring"],
-    description:
-      "Dr. Grace Wilson is a dedicated pediatrician ensuring comprehensive child care and healthy growth monitoring.",
-    image: "/vite.svg",
-    home: true,
-    socials: {
-      facebook: "#",
-      twitter: "#",
-      linkedin: "#",
-    },
-  },
-  {
-    id: 8,
-    name: "Dr. Henry Davis",
-    specialization: "Dermatology",
-    qualification: "MBBS, MD — 11+ yrs",
-    expertise: ["Skin Care", "Allergies", "Cosmetic Dermatology"],
-    description:
-      "Dr. Henry Davis specializes in dermatology, addressing skin conditions and providing cosmetic dermatology solutions.",
-    image: "/vite.svg",
-    home: false,
     socials: {
       facebook: "#",
       twitter: "#",

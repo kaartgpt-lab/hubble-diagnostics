@@ -41,22 +41,16 @@ export default function About() {
       {/* Info Section */}
       <section className="w-full bg-gray-100 py-16">
         <div className="container mx-auto px-4 sm:px-8 max-w-5xl space-y-6 text-center md:text-left">
+          <h2 className="text-3xl text-gray-700">
+            Redefining Diagnostic Excellence in Kanpur
+          </h2>
           <p className="text-gray-700 text-lg">
-            Hubble Diagnostics is dedicated to providing accurate, reliable, and
-            timely diagnostic services. With state-of-the-art laboratories and
-            advanced radiology equipment, we ensure every patient receives the
-            highest quality of care.
-          </p>
-          <p className="text-gray-700 text-lg">
-            Our team of board-certified pathologists and radiologists work
-            meticulously to deliver precise results, supporting doctors and
-            patients alike in making informed healthcare decisions.
-          </p>
-          <p className="text-gray-700 text-lg">
-            We also prioritize patient convenience with services like home
-            sample collection, online reports, and easy appointment scheduling.
-            At Hubble Diagnostics, we combine technology, expertise, and
-            compassion to provide healthcare you can trust.
+            At Hubble Diagnostics & Fetal Medicine Centre, we’re transforming
+            the diagnostic experience through advanced imaging, international
+            expertise, and compassionate care. With Kanpur’s most advanced
+            ultrasound system and zero-radiation technology, we bring precision,
+            comfort, and safety together — ensuring confidence in every
+            diagnosis.
           </p>
         </div>
       </section>

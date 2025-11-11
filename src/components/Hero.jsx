@@ -13,30 +13,31 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 md:px-16 flex flex-col justify-center text-center sm:text-left items-center sm:items-start py-12 sm:py-0">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug mb-4">
-          Kanpur's first <br />
-          <span className="text-blue-700">Zero Radiation</span> <br />
-          Diagnostic Centre
+          Advanced. <br />
+          <span className="text-blue-700">Accurate.</span> <br />
+          Assured.
         </h1>
 
         <p className="text-base sm:text-lg text-gray-200 mb-6 max-w-lg">
-          Latest & high-end ultrasound machine for pregnancy, women imaging,
-          interventional fetal medicine, radiology, and more.
+          Kanpur’s first and most advanced Zero-Radiation Diagnostic Centre,
+          offering world-class Fetal Medicine, Radiology, and Pathology services
+          — powered by technology, guided by expertise.
         </p>
 
         {/* Buttons + Opening Hours */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              to="/book-appointment"
+              to="/contact"
               className="bg-blue-950 hover:bg-blue-800 text-white px-5 py-2.5 rounded-lg transition text-sm text-center"
             >
               Book Your Appointment
             </Link>
             <Link
-              to="/contact"
+              to="/services"
               className="border border-white hover:bg-gray-700 text-white hover:text-white px-5 py-2.5 rounded-lg transition text-sm text-center"
             >
-              Contact Us
+              View Services
             </Link>
           </div>
 

@@ -17,8 +17,11 @@ export default function Footer() {
               </div>
               <span className="font-bold text-lg">Hubble Diagnostics</span>
             </div>
-            <p className="text-gray-200">
-              Comprehensive diagnostic and lab testing services.
+            <p className="text-gray-200">Ready for a Clearer Diagnosis?</p>
+            <br />
+            <p className="text-sm text-gray-300">
+              Experience precision imaging and fetal care that prioritizes
+              safety, comfort, and accuracy.
             </p>
           </div>
 
@@ -96,11 +99,34 @@ export default function Footer() {
               <li>info@hubblediagnostics.example</li>
               <li>45, Health Avenue, Your City</li>
             </ul>
+
+            {/* Buttons Row */}
+            <div className="flex flex-wrap gap-2 mb-3">
+              <button
+                onClick={() => navigate("/contact")}
+                className="bg-white text-blue-950 font-semibold px-4 py-2 rounded-sm hover:bg-blue-100 transition"
+              >
+                Contact Us
+              </button>
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://maps.app.goo.gl/J1cvboa3tHB54q19A",
+                    "_blank"
+                  )
+                }
+                className="text-white border border-white font-semibold px-4 py-2 rounded-sm hover:bg-gray-500 transition"
+              >
+                Locate Us
+              </button>
+            </div>
+
+            {/* Book Appointment Button */}
             <button
               onClick={() => navigate("/contact")}
-              className="bg-white text-blue-950 font-semibold px-4 py-2 rounded-sm hover:bg-blue-100 transition"
+              className="w-full bg-blue-800 text-white font-semibold px-4 py-2 rounded-sm hover:bg-blue-900 transition"
             >
-              Contact Us
+              Book an Appointment
             </button>
           </div>
         </div>

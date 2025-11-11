@@ -10,9 +10,9 @@ export default function Header() {
 
   const links = [
     { label: "Home", to: "/" },
-    { label: "Hubble Health Foundation", to: "/foundation" },
+    { label: "Hubble Education", to: "/foundation" },
     { label: "Our Doctors", to: "/ourdoctors" },
-    { label: "FAQs", to: "/faqs" },
+    // { label: "FAQs", to: "/faqs" },
     { label: "About Us", to: "/about" },
   ];
 
@@ -45,7 +45,7 @@ export default function Header() {
               </NavLink>
 
               {/* Insert Services dropdown right after Foundation */}
-              {link.label === "Hubble Health Foundation" && (
+              {link.label === "Hubble Education" && (
                 <div className="inline-block ml-4 relative">
                   <button
                     onClick={() => setOpen((v) => !v)}

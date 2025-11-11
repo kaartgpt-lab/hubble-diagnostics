@@ -25,79 +25,79 @@ export default function OurDoctors() {
         </div>
       </section>
 
-      {/* Doctors Grid - Full Width */}
+      {/* Doctors Grid */}
       <section className="w-full bg-gray-100 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8">
           {doctors.map((doc) => (
             <div
               key={doc.id}
-              className="bg-white text-blue-950 rounded-lg overflow-hidden flex flex-col items-start p-6"
+              className="bg-white text-blue-950 rounded-lg overflow-hidden flex flex-col"
             >
-              {/* Image */}
+              {/* Image section — full width, no padding */}
               <img
                 src={doc.image}
                 alt={doc.name}
-                className="w-full h-64 object-contain bg-white p-4 mb-4"
+                className="w-full h-102 object-cover"
               />
 
-              {/* Name & Specialization */}
-              <div className="font-semibold text-2xl mb-1">{doc.name}</div>
-              <div className="text-blue-700 text-sm mb-2">
-                {doc.specialization}
-              </div>
-              <div className="text-blue-600 text-xs mb-3">
-                {doc.qualification}
-              </div>
-
-              {/* Expertise */}
-              {doc.expertise && doc.expertise.length > 0 && (
-                <div className="mb-3">
-                  <strong className="text-blue-800">Expertise: </strong>
-                  <span className="text-blue-700">
-                    {doc.expertise.join(", ")}
-                  </span>
+              {/* Text content — padded */}
+              <div className="p-6 flex flex-col items-start text-left">
+                <div className="font-semibold text-2xl mb-1">{doc.name}</div>
+                <div className="text-blue-700 text-sm mb-2">
+                  {doc.specialization}
                 </div>
-              )}
+                <div className="text-blue-600 text-xs mb-3">
+                  {doc.qualification}
+                </div>
 
-              {/* Description */}
-              {doc.description && (
-                <p className="text-blue-800 text-sm leading-relaxed mb-3">
-                  {doc.description}
-                </p>
-              )}
+                {/* Expertise */}
+                {doc.expertise && doc.expertise.length > 0 && (
+                  <div className="mb-3">
+                    <strong className="text-blue-800">Expertise: </strong>
+                    <span className="text-blue-700">{doc.expertise}</span>
+                  </div>
+                )}
 
-              {/* Socials */}
-              <div className="flex gap-3 mt-auto">
-                {doc.socials.facebook && (
-                  <a
-                    href={doc.socials.facebook}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-blue-600 hover:text-blue-800"
-                  >
-                    <FaFacebookF />
-                  </a>
+                {/* Description */}
+                {doc.description && (
+                  <p className="text-blue-800 text-sm leading-relaxed mb-3">
+                    {doc.description}
+                  </p>
                 )}
-                {doc.socials.twitter && (
-                  <a
-                    href={doc.socials.twitter}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-blue-600 hover:text-blue-800"
-                  >
-                    <FaTwitter />
-                  </a>
-                )}
-                {doc.socials.linkedin && (
-                  <a
-                    href={doc.socials.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-blue-600 hover:text-blue-800"
-                  >
-                    <FaLinkedinIn />
-                  </a>
-                )}
+
+                {/* Socials */}
+                <div className="flex gap-3 mt-auto">
+                  {doc.socials.facebook && (
+                    <a
+                      href={doc.socials.facebook}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      <FaFacebookF />
+                    </a>
+                  )}
+                  {doc.socials.twitter && (
+                    <a
+                      href={doc.socials.twitter}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      <FaTwitter />
+                    </a>
+                  )}
+                  {doc.socials.linkedin && (
+                    <a
+                      href={doc.socials.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      <FaLinkedinIn />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
