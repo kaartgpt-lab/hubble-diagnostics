@@ -205,7 +205,7 @@ export default function Home() {
           {/* Optional Button */}
           <div className="flex justify-center mt-10">
             <a
-              href="https://instagram.com/yourhandle"
+              href="https://www.instagram.com/hubble.health/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-800 !text-white font-medium px-6 py-3 rounded-sm transition"

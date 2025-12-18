@@ -34,7 +34,7 @@ export default function YouTubeSection() {
       {/* Channel Button */}
       <div className="flex justify-center mt-10">
         <a
-          href="https://www.youtube.com/@YourChannel"
+          href="https://www.youtube.com/@hubblehealth"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-800 !text-white rounded-sm font-medium px-6 py-3 transition"
