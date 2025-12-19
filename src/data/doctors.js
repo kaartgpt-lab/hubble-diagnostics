@@ -18,7 +18,7 @@ const doctors = [
   },
   {
     id: 2,
-    name: "Dr. Bob Johnson",
+    name: "Dr. Mishra",
     specialization: "Consultant - Fetal Medicine",
     qualification: "MBBS, MS (Obstetrics & Gynaecology)",
     expertise:

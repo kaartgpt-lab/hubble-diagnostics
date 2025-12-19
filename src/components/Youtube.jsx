@@ -2,10 +2,10 @@ import React from "react";
 
 export default function YouTubeSection() {
   const videos = [
-    "https://www.youtube.com/embed/oHg5SJYRHA0",
-    "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "https://www.youtube.com/embed/oHg5SJYRHA0",
-    "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "https://www.youtube.com/embed/f2fA-eA-nWg",
+    "https://www.youtube.com/embed/B7puswHsEH0",
+    "https://www.youtube.com/embed/zNhMotBWV4Q",
+    "https://www.youtube.com/embed/oW0s9Mg28Yg",
   ];
 
   return (
@@ -24,7 +24,7 @@ export default function YouTubeSection() {
               title={`YouTube video ${index + 1}`}
               allowFullScreen
               loading="lazy"
-              className="w-full h-full"
+              className="w-full mx-1 h-full"
               style={{ border: 0 }}
             ></iframe>
           </div>

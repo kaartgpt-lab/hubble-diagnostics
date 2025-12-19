@@ -185,24 +185,37 @@ export default function Home() {
           </h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <a
+            {[
+              "https://www.instagram.com/p/DLXmJ9ESrsB/",
+              "https://www.instagram.com/p/DGAkSPCS3gR/",
+              "https://www.instagram.com/p/DSFqM8MjBp3/",
+              "https://www.instagram.com/p/DRw_uBUAWgf/",
+              "https://www.instagram.com/p/DRUiqk9D1RO/",
+              "https://www.instagram.com/p/DREzN5OD9Vq/",
+            ].map((url, i) => (
+              <div
                 key={i}
-                href="https://instagram.com"
-                target="_blank"
-                rel="noreferrer"
-                className="block overflow-hidden border border-gray-200"
+                className="
+            overflow-hidden 
+            border border-gray-200 
+            bg-white
+            h-[420px]        /* desktop */
+            sm:h-[440px]
+            lg:h-[480px]
+          "
               >
-                <img
-                  src={`https://picsum.photos/seed/insta${i}/600`}
-                  alt={`Instagram ${i}`}
-                  className="w-full h-full object-cover"
+                <iframe
+                  src={`${url}embed`}
+                  allow="encrypted-media"
+                  className="w-full h-full"
+                  frameBorder="0"
+                  scrolling="no"
                 />
-              </a>
+              </div>
             ))}
           </div>
 
-          {/* Optional Button */}
+          {/* Button */}
           <div className="flex justify-center mt-10">
             <a
               href="https://www.instagram.com/hubble.health/"
