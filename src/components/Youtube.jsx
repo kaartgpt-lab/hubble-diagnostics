@@ -1,4 +1,26 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+/* ----------------------------
+   Animation Variants
+---------------------------- */
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
+};
 
 export default function YouTubeSection() {
   const videos = [
@@ -9,30 +31,46 @@ export default function YouTubeSection() {
   ];
 
   return (
-    <section className="w-full bg-gray-100 py-16">
+    <motion.section
+      className="w-full bg-gray-100 py-16"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={container}
+    >
       {/* Heading */}
-      <h2 className="text-3xl md:text-4xl font-bold text-blue-950 mb-8 text-center">
+      <motion.h2
+        className="text-3xl md:text-4xl font-bold text-blue-950 mb-8 text-center"
+        variants={item}
+      >
         YouTube
-      </h2>
+      </motion.h2>
 
-      {/* Full-width Video Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px] w-full">
+      {/* Video Grid */}
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px] w-full"
+        variants={container}
+      >
         {videos.map((url, index) => (
-          <div key={index} className="aspect-video overflow-hidden">
+          <motion.div
+            key={index}
+            className="aspect-video overflow-hidden"
+            variants={item}
+          >
             <iframe
               src={url}
               title={`YouTube video ${index + 1}`}
               allowFullScreen
               loading="lazy"
-              className="w-full mx-1 h-full"
+              className="w-full h-full"
               style={{ border: 0 }}
-            ></iframe>
-          </div>
+            />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Channel Button */}
-      <div className="flex justify-center mt-10">
+      <motion.div className="flex justify-center mt-10" variants={item}>
         <a
           href="https://www.youtube.com/@hubblehealth"
           target="_blank"
@@ -49,7 +87,7 @@ export default function YouTubeSection() {
           </svg>
           Visit Our YouTube Channel
         </a>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

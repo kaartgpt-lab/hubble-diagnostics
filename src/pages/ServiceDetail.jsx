@@ -1,9 +1,19 @@
 import { useParams, Link } from "react-router-dom";
 import services from "../data/services.js";
+import { motion } from "framer-motion";
+
+/* ----------------------------
+   Animation Variants
+---------------------------- */
+const sectionVariant = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
 
 export default function ServiceDetail() {
   const { slug } = useParams();
   const svc = services.find((s) => s.slug === slug);
+
   if (!svc)
     return (
       <section className="py-16">
@@ -16,7 +26,12 @@ export default function ServiceDetail() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-blue-950 py-10 text-white">
+      <motion.section
+        className="bg-blue-950 py-10 text-white"
+        initial="hidden"
+        animate="visible"
+        variants={sectionVariant}
+      >
         <div className="container mx-auto px-4 sm:px-8 md:px-12 py-8 md:py-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="md:max-w-2xl">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
@@ -36,17 +51,30 @@ export default function ServiceDetail() {
             </button>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Main Content */}
-      <section className="py-12 px-6">
+      <motion.section
+        className="py-12 px-6"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariant}
+      >
         <div className="container mx-auto">
           {/* Hero Image */}
           {svc.hero && (
-            <img
+            <motion.img
               src={svc.hero}
               alt={svc.title}
               className="w-full h-72 object-cover rounded-2xl shadow mb-8"
+              initial={{ opacity: 0, scale: 1.05 }}
+              whileInView={{
+                opacity: 1,
+                scale: 1,
+                transition: { duration: 0.8 },
+              }}
+              viewport={{ once: true }}
             />
           )}
 
@@ -79,7 +107,7 @@ export default function ServiceDetail() {
             </Link>
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }

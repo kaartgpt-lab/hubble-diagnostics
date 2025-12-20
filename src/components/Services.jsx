@@ -1,13 +1,51 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import services from "../data/services";
+
+/* ----------------------------
+   Animation variants
+---------------------------- */
+const sectionVariant = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const containerVariant = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const cardVariant = {
+  hidden: { opacity: 0, y: 25 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 export default function Services() {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-gray-100 py-16 w-full">
-      <div className="px-8 text-center">
+    <motion.section
+      className="bg-gray-100 py-16 w-full"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={sectionVariant}
+    >
+      {/* Heading */}
+      <motion.div className="px-8 text-center" variants={sectionVariant}>
         <h2 className="text-3xl md:text-4xl font-bold text-blue-950 mb-3">
           Services We Offer
         </h2>
@@ -15,13 +53,17 @@ export default function Services() {
           Our services are beyond measurements and so is our commitment towards
           our patients.
         </p>
-      </div>
+      </motion.div>
 
-      {/* Responsive Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:flex lg:w-full gap-[2px]">
+      {/* Services Grid */}
+      <motion.div
+        className="grid grid-cols-2 md:grid-cols-4 lg:flex lg:w-full gap-[2px]"
+        variants={containerVariant}
+      >
         {services.map((s) => (
-          <div
+          <motion.div
             key={s.slug}
+            variants={cardVariant}
             onClick={() => navigate(`/services/${s.slug}`)}
             className="bg-blue-950 text-white p-6 sm:p-8 md:p-10 text-center cursor-pointer transition hover:bg-blue-900"
           >
@@ -31,9 +73,9 @@ export default function Services() {
             <p className="text-sm sm:text-base text-blue-100 leading-snug">
               {s.intro}
             </p>
-          </div>
+          </motion.div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

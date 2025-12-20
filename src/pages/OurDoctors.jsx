@@ -1,11 +1,43 @@
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import doctors from "../data/doctors";
+import { motion } from "framer-motion";
+
+/* ----------------------------
+   Animation Variants
+---------------------------- */
+const sectionVariant = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const gridContainerVariant = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const cardVariant = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
 
 export default function OurDoctors() {
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full bg-blue-950 text-white">
+      <motion.section
+        className="w-full bg-blue-950 text-white"
+        initial="hidden"
+        animate="visible"
+        variants={sectionVariant}
+      >
         <div className="max-w-7xl mx-auto px-6 sm:px-12 py-10 md:py-16 flex flex-col md:flex-row items-center md:items-start justify-between gap-6">
           <div className="text-center md:text-left md:max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-3">Our Doctors</h1>
@@ -23,24 +55,31 @@ export default function OurDoctors() {
             </button>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Doctors Grid */}
-      <section className="w-full bg-gray-100 py-12">
+      <motion.section
+        className="w-full bg-gray-100 py-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={gridContainerVariant}
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8">
           {doctors.map((doc) => (
-            <div
+            <motion.div
               key={doc.id}
               className="bg-white text-blue-950 rounded-lg overflow-hidden flex flex-col"
+              variants={cardVariant}
             >
-              {/* Image section — full width, no padding */}
+              {/* Image section */}
               <img
                 src={doc.image}
                 alt={doc.name}
                 className="w-full h-102 object-cover"
               />
 
-              {/* Text content — padded */}
+              {/* Text content */}
               <div className="p-6 flex flex-col items-start text-left">
                 <div className="font-semibold text-2xl mb-1">{doc.name}</div>
                 <div className="text-blue-700 text-sm mb-2">
@@ -50,7 +89,6 @@ export default function OurDoctors() {
                   {doc.qualification}
                 </div>
 
-                {/* Expertise */}
                 {doc.expertise && doc.expertise.length > 0 && (
                   <div className="mb-3">
                     <strong className="text-blue-800">Expertise: </strong>
@@ -58,7 +96,6 @@ export default function OurDoctors() {
                   </div>
                 )}
 
-                {/* Description */}
                 {doc.description && (
                   <p className="text-blue-800 text-sm leading-relaxed mb-3">
                     {doc.description}
@@ -99,10 +136,10 @@ export default function OurDoctors() {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }

@@ -15,6 +15,38 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* =========================
+   Slide Up Animation
+========================= */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  opacity: 0;
+  /* prevents flash */
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+/* =========================
+   Accessibility
+========================= */
+@media (prefers-reduced-motion: reduce) {
+  .animate-slideUp {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* 
 a {
   font-weight: 500;
