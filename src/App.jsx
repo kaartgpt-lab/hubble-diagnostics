@@ -13,20 +13,21 @@ import ScrollToTop from "./components/ScrollToTop.jsx";
 
 export default function App() {
   return (
-    <Routes>
+    <>
       <ScrollToTop />
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/services/:slug" element={<ServiceDetail />} />
-        <Route path="/faqs" element={<FAQsPage />} />
-        <Route path="/foundation" element={<FoundationPage />} />
-        <Route path="/ourdoctors" element={<OurDoctors />} />
-        <Route path="/contact" element={<Contact />} />
-        {/* Not Found Page */}
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:slug" element={<ServiceDetail />} />
+          <Route path="/faqs" element={<FAQsPage />} />
+          <Route path="/foundation" element={<FoundationPage />} />
+          <Route path="/ourdoctors" element={<OurDoctors />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
