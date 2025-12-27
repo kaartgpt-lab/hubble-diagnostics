@@ -21,10 +21,11 @@ export default function Header() {
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 text-white">
-          <div className="w-9 h-9 rounded-lg bg-white/20 grid place-content-center font-extrabold">
-            HD
-          </div>
-          <span className="font-bold text-lg">Hubble Diagnostics</span>
+          <img
+            src="/logo.png"
+            alt="Hubble Diagnostics Logo"
+            className="w-20 h-20 object-contain"
+          />
         </Link>
 
         {/* Desktop Navigation */}

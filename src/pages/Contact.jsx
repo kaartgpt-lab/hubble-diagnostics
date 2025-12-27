@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Phone, Smartphone, Mail, MapPin } from "lucide-react";
 
 /* ----------------------------
    Animation variants
@@ -41,8 +42,32 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Message sent!");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+
+    const whatsappNumber = "919044104040"; // country code + number (no +)
+
+    const message = `
+New Contact Enquiry 👇
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Message:
+${formData.message}
+  `;
+
+    const encodedMessage = encodeURIComponent(message.trim());
+
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, "_blank");
+
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
   };
 
   return (
@@ -76,26 +101,66 @@ export default function Contact() {
             <h2 className="text-2xl font-semibold text-blue-950">
               Contact Info
             </h2>
-            <ul className="space-y-2 text-gray-700">
-              <li>
-                <strong>Phone:</strong> +91 98765 43210
+
+            <ul className="space-y-4 text-gray-700">
+              {/* Mobile */}
+              <li className="flex items-start gap-3">
+                <Smartphone className="w-5 h-5 text-blue-950 mt-1" />
+                <span>
+                  <strong>Mobile:</strong>{" "}
+                  <a href="tel:+919044104040" className="hover:underline">
+                    +91 90441 04040
+                  </a>
+                </span>
               </li>
-              <li>
-                <strong>Email:</strong> info@hubblediagnostics.example
+
+              {/* Landline */}
+              <li className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-blue-950 mt-1" />
+                <span>
+                  <strong>Landline:</strong>{" "}
+                  <span className="select-text">0512-7961554</span>
+                </span>
               </li>
-              <li>
-                <strong>Address:</strong> 45, Health Avenue, Your City
+
+              {/* Email */}
+              <li className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-blue-950 mt-1" />
+                <span>
+                  <strong>Email:</strong>{" "}
+                  <a
+                    href="mailto:hubblediagnotics@gmail.com"
+                    className="hover:underline"
+                  >
+                    hubblediagnotics@gmail.com
+                  </a>
+                </span>
+              </li>
+
+              {/* Address */}
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-blue-950 mt-1" />
+                <span>
+                  <strong>Address:</strong>
+                  <br />
+                  G-1, A/10, Sarvodaya Nagar,
+                  <br />
+                  Opposite Kakadeo Police Station,
+                  <br />
+                  Kanpur
+                </span>
               </li>
             </ul>
 
             <h3 className="text-xl font-semibold text-blue-950 mt-6">
               Location
             </h3>
-            <div className="overflow-hidden rounded-lg">
+
+            <div className="overflow-hidden rounded-lg border">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3138.900928649747!2d80.299632!3d26.475973699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c39fb8fd56ac5%3A0x94f78060c31163!2sHubble%20Diagnostics%20and%20Fetal%20Medicine%20Centre%20-Hubble%20Health!5e1!3m2!1sen!2sin!4v1762837127119!5m2!1sen!2sin"
-                width="600"
-                height="450"
+                width="100%"
+                height="350"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"

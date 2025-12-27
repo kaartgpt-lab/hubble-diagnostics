@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import services from "../data/services.js";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Footer() {
   const navigate = useNavigate();
@@ -11,11 +12,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo & Description */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-white/15 grid place-items-center font-bold rounded">
-                HD
-              </div>
-              <span className="font-bold text-lg">Hubble Diagnostics</span>
+            <div className="flex items-center gap-2 ml-4">
+              <img
+                src="/logo.png"
+                alt="Hubble Diagnostics Logo"
+                className="w-20 h-20 object-contain"
+              />
             </div>
             <p className="text-gray-200">Ready for a Clearer Diagnosis?</p>
             <br />
@@ -94,10 +96,40 @@ export default function Footer() {
             <h2 className="text-gray-200 font-semibold text-sm mb-3">
               Contact
             </h2>
-            <ul className="space-y-1 text-gray-200 mb-4">
-              <li>+91 98765 43210</li>
-              <li>info@hubblediagnostics.example</li>
-              <li>45, Health Avenue, Your City</li>
+
+            <ul className="space-y-2 text-gray-200 mb-4 text-sm">
+              <li className="flex items-start gap-2">
+                <FaPhoneAlt className="mt-1 text-blue-300" />
+                <div>
+                  <a href="tel:+919044104040" className="hover:underline block">
+                    +91 90441 04040
+                  </a>
+                  <a href="tel:05127961554" className="hover:underline block">
+                    0512-7961554
+                  </a>
+                </div>
+              </li>
+
+              <li className="flex items-center gap-2">
+                <FaEnvelope className="text-blue-300" />
+                <a
+                  href="mailto:hubblediagnotics@gmail.com"
+                  className="hover:underline"
+                >
+                  hubblediagnotics@gmail.com
+                </a>
+              </li>
+
+              <li className="flex items-start gap-2">
+                <FaMapMarkerAlt className="mt-1 text-blue-300" />
+                <span className="leading-snug">
+                  G-1, A/10, Sarvodaya Nagar,
+                  <br />
+                  Opp. Kakadeo Police Station,
+                  <br />
+                  Kanpur
+                </span>
+              </li>
             </ul>
 
             {/* Buttons Row */}
@@ -108,6 +140,7 @@ export default function Footer() {
               >
                 Contact Us
               </button>
+
               <button
                 onClick={() =>
                   window.open(
@@ -115,13 +148,13 @@ export default function Footer() {
                     "_blank"
                   )
                 }
-                className="text-white border border-white font-semibold px-4 py-2 rounded-sm hover:bg-gray-500 transition"
+                className="text-white border border-white font-semibold px-4 py-2 rounded-sm hover:bg-white/10 transition"
               >
                 Locate Us
               </button>
             </div>
 
-            {/* Book Appointment Button */}
+            {/* Book Appointment */}
             <button
               onClick={() => navigate("/contact")}
               className="w-full bg-blue-800 text-white font-semibold px-4 py-2 rounded-sm hover:bg-blue-900 transition"

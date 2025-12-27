@@ -4,7 +4,7 @@ const services = [
     intro:
       "High-resolution imaging for pregnancy, infertility, and fetal screening — ensuring early and accurate insights.",
     slug: "fetal-medicine-woman-imaging",
-    hero: "/services/womb.jpg",
+    hero: "/services/fetalmedicine.jpg",
     desc: "Our general ultrasound services provide accurate imaging for all major organs including the abdomen, pelvis, thyroid, and soft tissues. These scans help detect abnormalities early and guide treatment plans efficiently.",
     bullets: [
       "USG Whole Abdomen",
@@ -20,7 +20,7 @@ const services = [
     intro:
       "State-of-the-art liver assessment using ultrasound elastography for early detection of fatty liver and cirrhosis.",
     slug: "advanced-liver-imaging",
-    hero: "/services/liver.jpg",
+    hero: "/services/liver.png",
     desc: "We specialize in advanced fetal imaging and prenatal diagnostic scans, ensuring the health and development of both mother and baby through all trimesters.",
     bullets: [
       "Early Pregnancy Viability Scan",
@@ -36,7 +36,7 @@ const services = [
     intro:
       "Image-guided, minimally invasive procedures for precise diagnosis and faster recovery.",
     slug: "interventional-radiology",
-    hero: "/services/mri.jpg",
+    hero: "/services/radiology.jpg",
     desc: "Our fetal medicine experts perform minimally invasive procedures that can help diagnose and treat certain fetal conditions before birth, improving outcomes for high-risk pregnancies.",
     bullets: [
       "Amniocentesis",
@@ -52,7 +52,7 @@ const services = [
     intro:
       "From routine X-rays to ultrasounds — safe, accurate, and efficient imaging for all medical needs.",
     slug: "general-radiology",
-    hero: "/services/xray.jpg",
+    hero: "/services/generalradiology.png",
     desc: "We offer specialized imaging for fertility evaluations, helping gynecologists and fertility specialists understand uterine and ovarian health in detail.",
     bullets: [
       "Transvaginal Ultrasound (TVS)",

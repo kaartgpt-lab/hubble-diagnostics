@@ -31,7 +31,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           Advanced. <br />
-          <span className="text-blue-700">Accurate.</span> <br />
+          <span className="text-blue-500">Accurate.</span> <br />
           Assured.
         </motion.h1>
 
@@ -44,9 +44,11 @@ export default function Hero() {
           }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          Kanpur’s first and most advanced Zero-Radiation Diagnostic Centre,
-          offering world-class Fetal Medicine, Radiology, and Pathology services
-          — powered by technology, guided by expertise.
+          <span className="font-semibold text-xl text-blue-400">
+            Kanpur’s First Zero-Radiation Diagnostic Centre
+          </span>
+          , offering world-class Fetal Medicine, Radiology, and Pathology
+          services — powered by technology, guided by expertise.
         </motion.p>
 
         {/* Buttons + Opening Hours */}

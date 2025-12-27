@@ -1,4 +1,3 @@
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import doctors from "../data/doctors";
 import { motion } from "framer-motion";
 
@@ -82,59 +81,65 @@ export default function OurDoctors() {
               {/* Text content */}
               <div className="p-6 flex flex-col items-start text-left">
                 <div className="font-semibold text-2xl mb-1">{doc.name}</div>
+
                 <div className="text-blue-700 text-sm mb-2">
                   {doc.specialization}
                 </div>
+
                 <div className="text-blue-600 text-xs mb-3">
                   {doc.qualification}
                 </div>
 
-                {doc.expertise && doc.expertise.length > 0 && (
-                  <div className="mb-3">
-                    <strong className="text-blue-800">Expertise: </strong>
-                    <span className="text-blue-700">{doc.expertise}</span>
+                {/* Expertise */}
+                {doc.expertise && (
+                  <div className="mb-3 text-sm">
+                    <span className="font-semibold text-blue-800">
+                      Expertise:{" "}
+                    </span>
+                    <span className="text-blue-700 whitespace-pre-line">
+                      {doc.expertise}
+                    </span>
                   </div>
                 )}
 
-                {doc.description && (
+                {/* Bio / Description */}
+                {(doc.bio || doc.description) && (
                   <p className="text-blue-800 text-sm leading-relaxed mb-3">
-                    {doc.description}
+                    {doc.bio || doc.description}
                   </p>
                 )}
 
-                {/* Socials */}
-                <div className="flex gap-3 mt-auto">
-                  {doc.socials.facebook && (
-                    <a
-                      href={doc.socials.facebook}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-blue-600 hover:text-blue-800"
-                    >
-                      <FaFacebookF />
-                    </a>
-                  )}
-                  {doc.socials.twitter && (
-                    <a
-                      href={doc.socials.twitter}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-blue-600 hover:text-blue-800"
-                    >
-                      <FaTwitter />
-                    </a>
-                  )}
-                  {doc.socials.linkedin && (
-                    <a
-                      href={doc.socials.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-blue-600 hover:text-blue-800"
-                    >
-                      <FaLinkedinIn />
-                    </a>
-                  )}
-                </div>
+                {/* Achievements */}
+                {doc.achievements && (
+                  <div className="mb-3 text-sm">
+                    <span className="font-semibold text-blue-800">
+                      Honors & Awards:{" "}
+                    </span>
+                    <span className="text-blue-700">{doc.achievements}</span>
+                  </div>
+                )}
+
+                {/* International Training */}
+                {doc.internationalTraining && (
+                  <div className="mb-3 text-sm">
+                    <span className="font-semibold text-blue-800">
+                      International Training:{" "}
+                    </span>
+                    <span className="text-blue-700">
+                      {doc.internationalTraining}
+                    </span>
+                  </div>
+                )}
+
+                {/* Publications */}
+                {doc.publications && (
+                  <div className="text-sm">
+                    <span className="font-semibold text-blue-800">
+                      Publications:{" "}
+                    </span>
+                    <span className="text-blue-700">{doc.publications}</span>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}

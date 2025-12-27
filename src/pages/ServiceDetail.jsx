@@ -67,7 +67,7 @@ export default function ServiceDetail() {
             <motion.img
               src={svc.hero}
               alt={svc.title}
-              className="w-full h-72 object-cover rounded-2xl shadow mb-8"
+              className="w-full object-cover rounded-2xl shadow mb-8"
               initial={{ opacity: 0, scale: 1.05 }}
               whileInView={{
                 opacity: 1,

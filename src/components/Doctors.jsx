@@ -1,5 +1,4 @@
 import doctors from "../data/doctors";
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 /* ----------------------------
@@ -62,46 +61,24 @@ export default function HomeDoctors() {
               {/* Content */}
               <div className="p-4 flex flex-col items-center">
                 <div className="mt-2 font-semibold text-lg">{doc.name}</div>
+
                 <div className="text-blue-700 text-sm mt-1">
                   {doc.specialization}
                 </div>
-                <div className="text-blue-600 text-xs mt-2">
+
+                <div className="text-blue-600 text-xs mt-2 mb-4">
                   {doc.qualification}
                 </div>
 
-                {/* Socials */}
-                <div className="flex gap-3 mt-3">
-                  {doc.socials.facebook && (
-                    <a
-                      href={doc.socials.facebook}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-blue-600 hover:text-blue-800 transition"
-                    >
-                      <FaFacebookF />
-                    </a>
-                  )}
-                  {doc.socials.twitter && (
-                    <a
-                      href={doc.socials.twitter}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-blue-600 hover:text-blue-800 transition"
-                    >
-                      <FaTwitter />
-                    </a>
-                  )}
-                  {doc.socials.linkedin && (
-                    <a
-                      href={doc.socials.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-blue-600 hover:text-blue-800 transition"
-                    >
-                      <FaLinkedinIn />
-                    </a>
-                  )}
-                </div>
+                {/* Learn More Button */}
+                <motion.button
+                  onClick={() => (window.location.href = "/ourdoctors")}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border border-blue-900 text-blue-900 px-4 py-1.5 rounded-md text-sm font-medium hover:bg-blue-900 hover:text-white transition"
+                >
+                  Learn More
+                </motion.button>
               </div>
             </motion.div>
           ))}
