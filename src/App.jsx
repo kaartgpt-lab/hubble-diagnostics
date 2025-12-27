@@ -9,10 +9,12 @@ import Contact from "./pages/Contact.jsx";
 import About from "./pages/About.jsx";
 import OurDoctors from "./pages/OurDoctors.jsx";
 import NotFound from "./not_found.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 export default function App() {
   return (
     <Routes>
+      <ScrollToTop />
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
