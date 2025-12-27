@@ -54,7 +54,7 @@ export default function Home() {
             diagnostics for every patient.
           </p>
           <button
-            onClick={() => navigate("/doctors")}
+            onClick={() => navigate("/ourdoctors")}
             className="border-2 border-blue-950 text-blue-950 font-semibold px-6 py-2 rounded-md transition"
           >
             Meet our Specialists
