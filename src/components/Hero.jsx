@@ -4,91 +4,81 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section
-      className="
-        relative w-full
-        min-h-[100svh] sm:min-h-screen
-        text-white flex items-center
-        bg-cover bg-no-repeat
-      "
-      style={{
-        backgroundImage: "url('/hero-bg.jpg')",
-        backgroundPosition: "center top",
-      }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+    <section className="relative w-full text-white flex items-end overflow-hidden h-[90vh] sm:h-[85vh]">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/hero-vid.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 md:px-16 py-24 sm:py-0 flex flex-col justify-center text-center sm:text-left items-center sm:items-start">
-        {/* Heading – LEFT */}
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
+
+      {/* Content at Bottom */}
+      <div className="relative z-10 w-full px-4 sm:px-8 py-6 sm:py-8 flex flex-col justify-end text-left">
+        {/* Heading */}
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-6"
-          initial={{ opacity: 0, x: -60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{
-            duration: 0.9,
-            ease: "easeOut",
-          }}
+          className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug mb-2"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           Advanced. <br />
           <span className="text-blue-500">Accurate.</span> <br />
           Assured.
         </motion.h1>
 
-        {/* Description – RIGHT */}
+        {/* Description */}
         <motion.p
-          className="text-sm sm:text-lg text-gray-200 mb-8 max-w-lg"
-          initial={{ opacity: 0, x: 60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{
-            duration: 0.9,
-            delay: 0.15,
-            ease: "easeOut",
-          }}
+          className="text-xs sm:text-sm md:text-sm text-gray-200 mb-4 max-w-xl"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
         >
-          <span className="font-semibold text-xl text-blue-400 block mb-2">
+          <span className="font-semibold text-sm sm:text-base text-blue-400 block mb-1">
             Kanpur’s First Zero-Radiation Diagnostic Centre
           </span>
           World-class Fetal Medicine, Radiology, and Pathology — powered by
           technology and guided by global expertise.
         </motion.p>
 
-        {/* Buttons + Hours – BOTTOM */}
+        {/* Buttons + Hours */}
         <motion.div
-          className="flex flex-col sm:flex-row sm:items-center gap-6 w-full sm:w-auto"
-          initial={{ opacity: 0, y: 50 }}
+          className="flex flex-col sm:flex-row sm:items-center gap-4 w-full sm:w-auto"
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1,
-            delay: 0.3,
-            ease: "easeOut",
-          }}
+          transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
         >
           {/* Buttons */}
-          <div className="flex gap-4 justify-center sm:justify-start">
+          <div className="flex gap-3 justify-start">
             <Link
               to="/contact"
-              className="bg-blue-950 hover:bg-blue-800 px-6 py-3 rounded-lg font-medium shadow-lg transition"
+              className="bg-blue-950 hover:bg-blue-800 px-4 py-2 rounded-md font-medium text-sm shadow transition"
             >
               Book Appointment
             </Link>
 
             <Link
               to="/services"
-              className="border border-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-950 transition"
+              className="border border-white px-4 py-2 rounded-md font-medium text-sm hover:bg-white hover:text-blue-950 transition"
             >
               View Services
             </Link>
           </div>
 
           {/* Opening Hours */}
-          <div className="bg-white/10 backdrop-blur-lg p-5 rounded-xl shadow-xl text-left max-w-xs mx-auto sm:mx-0">
-            <h3 className="font-semibold text-lg mb-2">Opening Hours</h3>
-            <p className="text-sm text-gray-200 leading-relaxed">
-              <span className="font-medium">Mon – Sat:</span> 10:00 am – 7:00 pm
+          <div className="bg-white/10 backdrop-blur-lg p-3 rounded-lg shadow text-left text-xs sm:text-sm max-w-[200px]">
+            <h3 className="font-semibold text-sm mb-1">Opening Hours</h3>
+            <p className="text-gray-200 leading-tight">
+              <span className="font-medium">Mon – Sat:</span> 10am – 7pm
               <br />
-              <span className="font-medium">Sun:</span> 12:00 noon – 7:00 pm
+              <span className="font-medium">Sun:</span> 12pm – 7pm
             </p>
           </div>
         </motion.div>

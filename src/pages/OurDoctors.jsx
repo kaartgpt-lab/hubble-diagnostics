@@ -64,85 +64,107 @@ export default function OurDoctors() {
         viewport={{ once: true, amount: 0.2 }}
         variants={gridContainerVariant}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8">
-          {doctors.map((doc) => (
-            <motion.div
-              key={doc.id}
-              className="bg-white text-blue-950 rounded-lg overflow-hidden flex flex-col"
-              variants={cardVariant}
-            >
-              {/* Image section */}
-              <img
-                src={doc.image}
-                alt={doc.name}
-                className="w-full h-102 object-cover"
-              />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {doctors.map((doc) => (
+              <motion.div
+                key={doc.id}
+                className="bg-white text-blue-950 rounded-lg overflow-hidden flex flex-col"
+                variants={cardVariant}
+              >
+                {/* Image section */}
+                <img
+                  src={doc.image}
+                  alt={doc.name}
+                  className="w-full h-102 object-cover"
+                />
 
-              {/* Text content */}
-              <div className="p-6 flex flex-col items-start text-left">
-                <div className="font-semibold text-2xl mb-1">{doc.name}</div>
+                {/* Text content */}
+                <div className="p-6 flex flex-col text-left space-y-3">
+                  {/* Name */}
+                  <h3 className="font-semibold text-2xl leading-tight">
+                    {doc.name}
+                  </h3>
 
-                <div className="text-blue-700 text-sm mb-2">
-                  {doc.specialization}
-                </div>
-
-                <div className="text-blue-600 text-xs mb-3">
-                  {doc.qualification}
-                </div>
-
-                {/* Expertise */}
-                {doc.expertise && (
-                  <div className="mb-3 text-sm">
-                    <span className="font-semibold text-blue-800">
-                      Expertise:{" "}
-                    </span>
-                    <span className="text-blue-700 whitespace-pre-line">
-                      {doc.expertise}
-                    </span>
-                  </div>
-                )}
-
-                {/* Bio / Description */}
-                {(doc.bio || doc.description) && (
-                  <p className="text-blue-800 text-sm leading-relaxed mb-3">
-                    {doc.bio || doc.description}
+                  {/* Specialization */}
+                  <p className="text-blue-700 text-sm font-medium">
+                    {doc.specialization}
                   </p>
-                )}
 
-                {/* Achievements */}
-                {doc.achievements && (
-                  <div className="mb-3 text-sm">
-                    <span className="font-semibold text-blue-800">
-                      Honors & Awards:{" "}
-                    </span>
-                    <span className="text-blue-700">{doc.achievements}</span>
-                  </div>
-                )}
+                  {/* Qualification */}
+                  <p className="text-blue-600 text-xs">{doc.qualification}</p>
 
-                {/* International Training */}
-                {doc.internationalTraining && (
-                  <div className="mb-3 text-sm">
-                    <span className="font-semibold text-blue-800">
-                      International Training:{" "}
-                    </span>
-                    <span className="text-blue-700">
-                      {doc.internationalTraining}
-                    </span>
-                  </div>
-                )}
+                  {/* Divider */}
+                  <div className="w-full h-px bg-blue-100" />
 
-                {/* Publications */}
-                {doc.publications && (
-                  <div className="text-sm">
-                    <span className="font-semibold text-blue-800">
-                      Publications:{" "}
-                    </span>
-                    <span className="text-blue-700">{doc.publications}</span>
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          ))}
+                  {/* Expertise */}
+                  {doc.expertise && (
+                    <div>
+                      <p className="font-semibold text-blue-900 text-sm mb-1">
+                        Areas of Expertise
+                      </p>
+                      <ul className="list-disc list-inside text-blue-700 text-sm space-y-1">
+                        {doc.expertise.split("\n").map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Bio */}
+                  {(doc.bio || doc.description) && (
+                    <p className="text-blue-800 text-sm leading-relaxed">
+                      {doc.bio || doc.description}
+                    </p>
+                  )}
+
+                  {/* Achievements */}
+                  {doc.achievements && (
+                    <div>
+                      <p className="font-semibold text-blue-900 text-sm mb-1">
+                        Honors & Awards
+                      </p>
+                      <ul className="list-disc list-inside text-blue-700 text-sm space-y-1">
+                        {doc.achievements.split("\n").map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* International Training */}
+                  {doc.internationalTraining && (
+                    <div>
+                      <p className="font-semibold text-blue-900 text-sm mb-1">
+                        International Training
+                      </p>
+                      <ul className="list-disc list-inside text-blue-700 text-sm space-y-1">
+                        {doc.internationalTraining
+                          .split("\n")
+                          .map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Publications */}
+                  {doc.publications && (
+                    <div>
+                      <p className="font-semibold text-blue-900 text-sm mb-1">
+                        Publications
+                      </p>
+                      <ul className="list-disc list-inside text-blue-700 text-sm space-y-1">
+                        {doc.publications.split("\n").map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.section>
     </>

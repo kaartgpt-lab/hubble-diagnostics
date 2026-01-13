@@ -65,7 +65,7 @@ export default function About() {
         variants={imageVariant}
       >
         <img
-          src="/hero-bg.jpg"
+          src="/about.png"
           alt="About Hero"
           className="w-full h-full object-cover"
         />
