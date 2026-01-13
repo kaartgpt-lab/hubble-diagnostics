@@ -162,6 +162,22 @@ body {
   border-radius: 12px;
 }
 
+/* Hide scrollbar completely */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (hover: hover) {
+  .hover-only {
+    will-change: transform;
+  }
+}
+
 /* Responsive tweaks */
 @media (max-width: 900px) {
 

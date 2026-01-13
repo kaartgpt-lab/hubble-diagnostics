@@ -43,7 +43,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const whatsappNumber = "919044104040"; // country code + number (no +)
+    const whatsappNumber = "919044104040";
 
     const message = `
 New Contact Enquiry 👇

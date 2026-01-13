@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import testimonials from "../data/testimonials";
 
@@ -10,63 +10,86 @@ const sectionVariant = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
+    transition: { duration: 0.9, ease: "easeOut" },
   },
 };
 
 const containerVariant = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
+    transition: { staggerChildren: 0.18 },
   },
 };
 
 const cardVariant = {
-  hidden: { opacity: 0, y: 25 },
+  hidden: { opacity: 0, y: 35, scale: 0.95 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    scale: 1,
+    transition: { duration: 0.8, ease: "easeOut" },
   },
 };
 
 export default function Testimonials() {
-  const containerRef = useRef();
+  const containerRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
 
-  // Scroll buttons
+  /* ----------------------------
+     Auto Scroll
+  ---------------------------- */
+  useEffect(() => {
+    if (isHovered) return;
+
+    const interval = setInterval(() => {
+      if (!containerRef.current) return;
+
+      containerRef.current.scrollBy({
+        left: 320,
+        behavior: "smooth",
+      });
+
+      // Loop back
+      if (
+        containerRef.current.scrollLeft + containerRef.current.clientWidth >=
+        containerRef.current.scrollWidth
+      ) {
+        containerRef.current.scrollTo({ left: 0, behavior: "smooth" });
+      }
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [isHovered]);
+
+  /* ----------------------------
+     Scroll buttons
+  ---------------------------- */
   const scrollBy = (distance) => {
     if (!containerRef.current) return;
     containerRef.current.scrollBy({ left: distance, behavior: "smooth" });
   };
 
-  // Stars
-  const renderStars = (count) => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <span
-          key={i}
-          className={i <= count ? "text-yellow-400" : "text-gray-300"}
-        >
-          ★
-        </span>
-      );
-    }
-    return stars;
-  };
+  /* ----------------------------
+     Stars
+  ---------------------------- */
+  const renderStars = (count = 5) =>
+    [...Array(5)].map((_, i) => (
+      <span key={i} className={i < count ? "text-yellow-400" : "text-gray-300"}>
+        ★
+      </span>
+    ));
 
   return (
     <motion.section
-      className="w-full bg-gray-100 py-16 relative overflow-hidden"
+      className="w-full bg-gray-100 py-20 relative overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={sectionVariant}
     >
+      {/* Heading */}
       <motion.h2
-        className="text-3xl md:text-4xl font-bold text-blue-950 mb-8 text-center"
+        className="text-3xl md:text-4xl font-bold text-blue-950 mb-12 text-center"
         variants={sectionVariant}
       >
         What Our Patients Say
@@ -75,11 +98,12 @@ export default function Testimonials() {
       {/* Scrollable container */}
       <motion.div
         ref={containerRef}
-        className="flex gap-4 px-6 sm:px-12 w-full overflow-x-auto scroll-smooth scrollbar-hide cursor-grab"
+        className="flex gap-6 px-6 sm:px-12 overflow-x-auto scroll-smooth cursor-grab no-scrollbar"
         variants={containerVariant}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onTouchStart={() => setIsHovered(true)}
+        onTouchEnd={() => setIsHovered(false)}
       >
         {testimonials.map((t, idx) => (
           <motion.div key={idx} variants={cardVariant}>
@@ -88,20 +112,25 @@ export default function Testimonials() {
         ))}
       </motion.div>
 
-      {/* Scroll Buttons */}
-      <button
-        onClick={() => scrollBy(-300)}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-blue-950 hover:bg-blue-900 text-white p-2 sm:p-3 rounded-full shadow-md transition"
+      {/* Left Button */}
+      <motion.button
+        onClick={() => scrollBy(-320)}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className="absolute left-3 top-1/2 -translate-y-1/2 bg-blue-950 text-white p-3 rounded-full shadow-lg hidden sm:flex"
       >
-        &#8592;
-      </button>
+        ←
+      </motion.button>
 
-      <button
-        onClick={() => scrollBy(300)}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-950 hover:bg-blue-900 text-white p-2 sm:p-3 rounded-full shadow-md transition"
+      {/* Right Button */}
+      <motion.button
+        onClick={() => scrollBy(320)}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className="absolute right-3 top-1/2 -translate-y-1/2 bg-blue-950 text-white p-3 rounded-full shadow-lg hidden sm:flex"
       >
-        &#8594;
-      </button>
+        →
+      </motion.button>
     </motion.section>
   );
 }
@@ -119,9 +148,20 @@ function TestimonialCard({ testimonial, renderStars }) {
     : testimonial.message.slice(0, maxLength) + (isLong ? "..." : "");
 
   return (
-    <div className="flex-none w-72 sm:w-80 bg-white p-6 rounded-xl shadow-md flex flex-col justify-between">
-      <div>
-        <p className="text-gray-700 mb-4 leading-relaxed">"{displayText}"</p>
+    <motion.div
+      className="flex-none w-72 sm:w-80 bg-white p-6 rounded-2xl shadow-md flex flex-col justify-between relative overflow-hidden"
+      whileHover={{
+        y: -10,
+        scale: 1.04,
+        boxShadow: "0px 28px 60px rgba(0,0,0,0.18)",
+      }}
+      transition={{ type: "spring", stiffness: 160, damping: 22 }}
+    >
+      {/* Glow */}
+      <div className="absolute inset-0 opacity-0 hover:opacity-100 transition duration-500 bg-gradient-to-t from-blue-100/40 via-transparent to-transparent" />
+
+      <div className="relative z-10">
+        <p className="text-gray-700 mb-4 leading-relaxed">“{displayText}”</p>
 
         {isLong && !expanded && (
           <button
@@ -133,12 +173,10 @@ function TestimonialCard({ testimonial, renderStars }) {
         )}
       </div>
 
-      <div className="flex items-center gap-3 mt-4">
-        <div>
-          <h4 className="font-semibold text-blue-950">{testimonial.name}</h4>
-          <div className="text-sm">{renderStars(testimonial.rating || 5)}</div>
-        </div>
+      <div className="relative z-10 mt-5">
+        <h4 className="font-semibold text-blue-950">{testimonial.name}</h4>
+        <div className="text-sm">{renderStars(testimonial.rating)}</div>
       </div>
-    </div>
+    </motion.div>
   );
 }

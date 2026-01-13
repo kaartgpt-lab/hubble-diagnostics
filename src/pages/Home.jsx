@@ -53,12 +53,50 @@ export default function Home() {
             Our commitment is to provide fast, transparent, and accurate
             diagnostics for every patient.
           </p>
-          <button
+          <motion.button
             onClick={() => navigate("/ourdoctors")}
-            className="border-2 border-blue-950 text-blue-950 font-semibold px-6 py-2 rounded-md transition"
+            whileHover={{
+              y: -4,
+              boxShadow: "0px 12px 24px rgba(23, 37, 84, 0.25)",
+            }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            className="
+    border-2 border-blue-950 text-blue-950
+    font-semibold px-6 py-2 rounded-md
+    bg-transparent
+  "
           >
             Meet our Specialists
-          </button>
+          </motion.button>
+        </div>
+      </motion.section>
+
+      {/* Numbers */}
+      <motion.section
+        className="w-full py-20 bg-blue-950 text-white"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {[
+            ["15+", "Years of Expertise"],
+            ["50,000+", "Patients Served"],
+            ["100%", "Radiation-Free Care"],
+            ["24–48 hrs", "Report Turnaround"],
+          ].map(([value, label], i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.15 }}
+            >
+              <div className="text-4xl font-bold mb-2">{value}</div>
+              <p className="text-sm tracking-wide opacity-90">{label}</p>
+            </motion.div>
+          ))}
         </div>
       </motion.section>
 
@@ -94,13 +132,23 @@ export default function Home() {
 
       {/* Why Choose Us */}
       <motion.section
-        className="w-full py-16 bg-white"
-        variants={fadeUp}
+        className="w-full py-20 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="container mx-auto px-4 sm:px-8 text-center max-w-3xl mb-10">
+        {/* Heading */}
+        <motion.div
+          className="container mx-auto px-4 sm:px-8 text-center max-w-3xl mb-14"
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.9, ease: "easeOut" },
+            },
+          }}
+        >
           <h3 className="text-sm font-semibold text-blue-900 uppercase tracking-widest mb-2">
             Why Choose Us?
           </h3>
@@ -110,9 +158,18 @@ export default function Home() {
           <p className="text-gray-700 text-lg">
             Discover what sets Hubble Health apart.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="container mx-auto px-4 sm:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+        {/* Cards */}
+        <motion.div
+          className="container mx-auto px-4 sm:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.18 },
+            },
+          }}
+        >
           {[
             ["🩻", "Most Advanced Ultrasound in Kanpur"],
             ["☢️", "Zero Radiation Centre"],
@@ -123,18 +180,55 @@ export default function Home() {
           ].map(([icon, title], i) => (
             <motion.div
               key={i}
-              className="bg-gray-50 text-blue-950 rounded-lg shadow p-6 flex flex-col items-center text-center"
-              variants={fadeUp}
-              transition={{ delay: i * 0.08 }}
+              className="group bg-gray-50 text-blue-950 rounded-xl p-8 flex flex-col items-center text-center relative overflow-hidden"
+              variants={{
+                hidden: { opacity: 0, y: 40, scale: 0.96 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: {
+                    duration: 0.8,
+                    ease: "easeOut",
+                  },
+                },
+              }}
+              whileHover={{
+                y: -10,
+                scale: 1.03,
+                boxShadow: "0px 28px 60px rgba(0,0,0,0.18)",
+              }}
+              whileTap={{ scale: 0.97 }}
+              transition={{
+                type: "spring",
+                stiffness: 160,
+                damping: 22,
+              }}
             >
-              <div className="text-3xl mb-3">{icon}</div>
-              <h3 className="font-semibold text-lg mb-2">{title}</h3>
-              <p className="text-gray-700 text-sm">
+              {/* Hover Glow */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-t from-blue-100/50 via-transparent to-transparent" />
+
+              {/* Icon */}
+              <motion.div
+                className="relative z-10 text-4xl mb-4"
+                whileHover={{ y: -6, scale: 1.1 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
+                {icon}
+              </motion.div>
+
+              {/* Title */}
+              <h3 className="relative z-10 font-semibold text-lg mb-2">
+                {title}
+              </h3>
+
+              {/* Description */}
+              <p className="relative z-10 text-gray-700 text-sm">
                 Experience world-class diagnostic excellence.
               </p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </motion.section>
 
       {/* Vision */}

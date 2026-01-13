@@ -63,12 +63,16 @@ export default function FoundationPage() {
           </motion.div>
 
           <motion.div className="mt-4 md:mt-0" variants={buttonVariant}>
-            <button
+            <motion.button
               onClick={() => (window.location.href = "/contact")}
-              className="bg-white text-blue-950 font-semibold px-4 py-2 rounded-sm hover:bg-blue-100 transition text-m sm:text-base"
+              whileHover={{ scale: 1.06, y: -2 }}
+              whileTap={{ scale: 0.96 }}
+              transition={{ type: "spring", stiffness: 300, damping: 18 }}
+              className="bg-white text-blue-950 font-semibold px-5 py-2.5 rounded-sm
+             hover:bg-blue-50 transition text-sm sm:text-base"
             >
               Contact Us
-            </button>
+            </motion.button>
           </motion.div>
         </div>
       </section>

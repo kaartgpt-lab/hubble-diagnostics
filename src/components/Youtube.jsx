@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaYoutube, FaPlay } from "react-icons/fa";
 
 /* ----------------------------
    Animation Variants
@@ -48,15 +49,26 @@ export default function YouTubeSection() {
 
       {/* Video Grid */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px] w-full"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4"
         variants={container}
       >
         {videos.map((url, index) => (
           <motion.div
             key={index}
-            className="aspect-video overflow-hidden"
+            className="relative aspect-video rounded-lg overflow-hidden bg-black group"
             variants={item}
+            whileHover={{
+              scale: 1.04,
+              y: -6,
+              boxShadow: "0px 18px 35px rgba(0,0,0,0.25)",
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 180,
+              damping: 22,
+            }}
           >
+            {/* Iframe */}
             <iframe
               src={url}
               title={`YouTube video ${index + 1}`}
@@ -65,28 +77,42 @@ export default function YouTubeSection() {
               className="w-full h-full"
               style={{ border: 0 }}
             />
+
+            {/* Hover Overlay */}
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                whileHover={{ scale: 1 }}
+                className="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center"
+              >
+                <FaPlay className="text-white text-xl ml-1" />
+              </motion.div>
+            </div>
           </motion.div>
         ))}
       </motion.div>
 
       {/* Channel Button */}
-      <motion.div className="flex justify-center mt-10" variants={item}>
-        <a
+      <motion.div className="flex justify-center mt-12" variants={item}>
+        <motion.a
           href="https://www.youtube.com/@hubblehealth"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-800 !text-white rounded-sm font-medium px-6 py-3 transition"
+          className="inline-flex items-center gap-3 bg-blue-900 text-white rounded-md font-medium px-6 py-3"
+          whileHover={{
+            scale: 1.08,
+            boxShadow: "0px 12px 30px rgba(0,0,0,0.35)",
+          }}
+          whileTap={{ scale: 0.95 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 18,
+          }}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            className="w-5 h-5 text-red-500"
-          >
-            <path d="M23.5 6.2s-.2-1.7-.8-2.4c-.8-.8-1.6-.8-2-1C18 2.4 12 2.4 12 2.4h-.1s-6 0-8.7.4c-.5.2-1.3.2-2 1C.7 4.5.5 6.2.5 6.2S0 8.3 0 10.3v2c0 2 .5 4.1.5 4.1s.2 1.7.8 2.4c.8.8 1.8.8 2.2.9 1.6.2 6.5.4 8.5.4h.2c2 0 6.9-.1 8.5-.4.4 0 1.4-.1 2.2-.9.6-.7.8-2.4.8-2.4s.5-2.1.5-4.1v-2c0-2-.5-4.1-.5-4.1zM9.6 14.8V8.7l5.8 3-5.8 3.1z" />
-          </svg>
+          <FaYoutube className="text-red-500 text-xl" />
           Visit Our YouTube Channel
-        </a>
+        </motion.a>
       </motion.div>
     </motion.section>
   );
