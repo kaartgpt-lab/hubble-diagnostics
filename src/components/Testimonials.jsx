@@ -89,7 +89,7 @@ export default function Testimonials() {
     >
       {/* Heading */}
       <motion.h2
-        className="text-3xl md:text-4xl font-bold text-blue-950 mb-12 text-center"
+        className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-12 text-center"
         variants={sectionVariant}
       >
         What Our Patients Say
@@ -117,7 +117,7 @@ export default function Testimonials() {
         onClick={() => scrollBy(-320)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="absolute left-3 top-1/2 -translate-y-1/2 bg-blue-950 text-white p-3 rounded-full shadow-lg hidden sm:flex"
+        className="absolute left-3 top-1/2 -translate-y-1/2 bg-[#2d69ff] text-white p-3 rounded-full shadow-lg hidden sm:flex"
       >
         ←
       </motion.button>
@@ -127,7 +127,7 @@ export default function Testimonials() {
         onClick={() => scrollBy(320)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="absolute right-3 top-1/2 -translate-y-1/2 bg-blue-950 text-white p-3 rounded-full shadow-lg hidden sm:flex"
+        className="absolute right-3 top-1/2 -translate-y-1/2 bg-[#2d69ff] text-white p-3 rounded-full shadow-lg hidden sm:flex"
       >
         →
       </motion.button>
@@ -158,7 +158,7 @@ function TestimonialCard({ testimonial, renderStars }) {
       transition={{ type: "spring", stiffness: 160, damping: 22 }}
     >
       {/* Glow */}
-      <div className="absolute inset-0 opacity-0 hover:opacity-100 transition duration-500 bg-gradient-to-t from-blue-100/40 via-transparent to-transparent" />
+      <div className="absolute inset-0 opacity-0 hover:opacity-100 transition duration-500 bg-gradient-to-t from-[#e1f0ff]/40 via-transparent to-transparent" />
 
       <div className="relative z-10">
         <p className="text-gray-700 mb-4 leading-relaxed">“{displayText}”</p>
@@ -166,7 +166,7 @@ function TestimonialCard({ testimonial, renderStars }) {
         {isLong && !expanded && (
           <button
             onClick={() => setExpanded(true)}
-            className="text-blue-600 text-xs font-medium hover:underline"
+            className="text-[#4baa7d] text-xs font-medium hover:underline"
           >
             Read more
           </button>
@@ -174,7 +174,7 @@ function TestimonialCard({ testimonial, renderStars }) {
       </div>
 
       <div className="relative z-10 mt-5">
-        <h4 className="font-semibold text-blue-950">{testimonial.name}</h4>
+        <h4 className="font-semibold text-[#2d69ff]">{testimonial.name}</h4>
         <div className="text-sm">{renderStars(testimonial.rating)}</div>
       </div>
     </motion.div>

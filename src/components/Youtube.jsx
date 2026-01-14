@@ -41,7 +41,7 @@ export default function YouTubeSection() {
     >
       {/* Heading */}
       <motion.h2
-        className="text-3xl md:text-4xl font-bold text-blue-950 mb-8 text-center"
+        className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-8 text-center"
         variants={item}
       >
         YouTube
@@ -98,7 +98,7 @@ export default function YouTubeSection() {
           href="https://www.youtube.com/@hubblehealth"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 bg-blue-900 text-white rounded-md font-medium px-6 py-3"
+          className="inline-flex items-center gap-3 bg-[#2d69ff] text-white rounded-md font-medium px-6 py-3"
           whileHover={{
             scale: 1.08,
             boxShadow: "0px 12px 30px rgba(0,0,0,0.35)",

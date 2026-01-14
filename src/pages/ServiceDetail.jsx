@@ -27,7 +27,7 @@ export default function ServiceDetail() {
     <>
       {/* Hero Section */}
       <motion.section
-        className="bg-blue-950 py-10 text-white"
+        className="bg-[#2d69ff] py-10 text-white"
         initial="hidden"
         animate="visible"
         variants={sectionVariant}
@@ -45,7 +45,7 @@ export default function ServiceDetail() {
           <div className="mt-4 md:mt-0">
             <button
               onClick={() => (window.location.href = "/contact")}
-              className="bg-white text-blue-950 font-semibold px-4 py-2 rounded-sm hover:bg-blue-100 transition text-m"
+              className="bg-white text-[#2d69ff] font-semibold px-4 py-2 rounded-sm hover:bg-[#e1f0ff] transition text-m"
             >
               Contact Us
             </button>
@@ -101,7 +101,7 @@ export default function ServiceDetail() {
           <div className="mt-8">
             <Link
               to="/services"
-              className="text-blue-900 font-medium hover:underline"
+              className="text-[#2d69ff] font-medium hover:underline"
             >
               ← Back to all services
             </Link>

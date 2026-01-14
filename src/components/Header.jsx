@@ -17,7 +17,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-blue-950 text-gray-200 shadow-md">
+    <header className="sticky top-0 z-50 bg-[#2d69ff] text-gray-200 shadow-md">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 text-white">
@@ -99,14 +99,14 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-blue-950 text-white px-4 py-4 border-t border-blue-800">
+        <div className="md:hidden bg-[#2d69ff] text-white px-4 py-4 border-t border-[#4baa7d]">
           <ul className="flex flex-col gap-3">
             {links.map((link) => (
               <li key={link.to}>
                 <Link
                   to={link.to}
                   onClick={() => setMobileOpen(false)}
-                  className="block font-medium hover:text-blue-300 transition"
+                  className="block font-medium hover:text-[#e1f0ff] transition"
                 >
                   {link.label}
                 </Link>
@@ -117,13 +117,13 @@ export default function Header() {
             <li>
               <button
                 onClick={() => setMobileServicesOpen((v) => !v)}
-                className="w-full text-left font-medium hover:text-blue-300 transition flex justify-between items-center"
+                className="w-full text-left font-medium hover:text-[#e1f0ff] transition flex justify-between items-center"
               >
                 Services ▾
               </button>
 
               {mobileServicesOpen && (
-                <div className="mt-2 ml-2 bg-blue-900 rounded-lg border border-blue-800">
+                <div className="mt-2 ml-2 bg-[#2d69ff] rounded-lg border border-[#4baa7d]">
                   <ServicesDropdown
                     onNavigate={(href) => {
                       setMobileOpen(false);

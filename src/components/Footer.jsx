@@ -6,7 +6,7 @@ export default function Footer() {
   const navigate = useNavigate();
 
   return (
-    <footer className="w-full bg-blue-950 text-white">
+    <footer className="w-full bg-[#2d69ff] text-white">
       {/* Main Footer */}
       <section className="py-12 px-6 sm:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -34,14 +34,14 @@ export default function Footer() {
             </h2>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="hover:text-blue-300 transition">
+                <Link to="/" className="hover:text-[#e1f0ff] transition">
                   Home
                 </Link>
               </li>
               <li>
                 <Link
                   to="/foundation"
-                  className="hover:text-blue-300 transition"
+                  className="hover:text-[#e1f0ff] transition"
                 >
                   Hubble Health Foundation
                 </Link>
@@ -49,23 +49,26 @@ export default function Footer() {
               <li>
                 <Link
                   to="/ourdoctors"
-                  className="hover:text-blue-300 transition"
+                  className="hover:text-[#e1f0ff] transition"
                 >
                   Our Doctors
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-blue-300 transition">
+                <Link
+                  to="/services"
+                  className="hover:text-[#e1f0ff] transition"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/faqs" className="hover:text-blue-300 transition">
+                <Link to="/faqs" className="hover:text-[#e1f0ff] transition">
                   FAQs
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-blue-300 transition">
+                <Link to="/about" className="hover:text-[#e1f0ff] transition">
                   About Us
                 </Link>
               </li>
@@ -82,7 +85,7 @@ export default function Footer() {
                 <li key={s.slug}>
                   <Link
                     to={`/services/${s.slug}`}
-                    className="hover:text-blue-300 transition"
+                    className="hover:text-[#e1f0ff] transition"
                   >
                     {s.title}
                   </Link>
@@ -99,7 +102,7 @@ export default function Footer() {
 
             <ul className="space-y-2 text-gray-200 mb-4 text-sm">
               <li className="flex items-start gap-2">
-                <FaPhoneAlt className="mt-1 text-blue-300" />
+                <FaPhoneAlt className="mt-1 text-[#e1f0ff]" />
                 <div>
                   <a href="tel:+919044104040" className="hover:underline block">
                     +91 90441 04040
@@ -111,7 +114,7 @@ export default function Footer() {
               </li>
 
               <li className="flex items-center gap-2">
-                <FaEnvelope className="text-blue-300" />
+                <FaEnvelope className="text-[#e1f0ff]" />
                 <a
                   href="mailto:hubblediagnotics@gmail.com"
                   className="hover:underline"
@@ -121,7 +124,7 @@ export default function Footer() {
               </li>
 
               <li className="flex items-start gap-2">
-                <FaMapMarkerAlt className="mt-1 text-blue-300" />
+                <FaMapMarkerAlt className="mt-1 text-[#e1f0ff]" />
                 <span className="leading-snug">
                   G-1, A/10, Sarvodaya Nagar,
                   <br />
@@ -136,7 +139,7 @@ export default function Footer() {
             <div className="flex flex-wrap gap-2 mb-3">
               <button
                 onClick={() => navigate("/contact")}
-                className="bg-white text-blue-950 font-semibold px-4 py-2 rounded-sm hover:bg-blue-100 transition"
+                className="bg-white text-[#2d69ff] font-semibold px-4 py-2 rounded-sm hover:bg-[#e1f0ff] transition"
               >
                 Contact Us
               </button>
@@ -157,7 +160,7 @@ export default function Footer() {
             {/* Book Appointment */}
             <button
               onClick={() => navigate("/contact")}
-              className="w-full bg-blue-800 text-white font-semibold px-4 py-2 rounded-sm hover:bg-blue-900 transition"
+              className="w-full bg-[#4baa7d] text-white font-semibold px-4 py-2 rounded-sm hover:bg-[#2d69ff] transition"
             >
               Book an Appointment
             </button>

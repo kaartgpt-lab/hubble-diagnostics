@@ -32,7 +32,7 @@ export default function OurDoctors() {
     <>
       {/* Hero Section */}
       <motion.section
-        className="w-full bg-blue-950 text-white"
+        className="w-full bg-[#2d69ff] text-white"
         initial="hidden"
         animate="visible"
         variants={sectionVariant}
@@ -48,7 +48,7 @@ export default function OurDoctors() {
           <div className="mt-4 md:mt-0">
             <button
               onClick={() => (window.location.href = "/contact")}
-              className="bg-white text-blue-950 font-semibold px-4 py-2 rounded-sm hover:bg-blue-100 transition text-m sm:text-base"
+              className="bg-white text-[#2d69ff] font-semibold px-4 py-2 rounded-sm hover:bg-[#e1f0ff] transition text-m sm:text-base"
             >
               Contact Us
             </button>
@@ -69,7 +69,7 @@ export default function OurDoctors() {
             {doctors.map((doc) => (
               <motion.div
                 key={doc.id}
-                className="bg-white text-blue-950 rounded-lg overflow-hidden flex flex-col"
+                className="bg-white text-[#2d69ff] rounded-lg overflow-hidden flex flex-col"
                 variants={cardVariant}
               >
                 {/* Image section */}
@@ -87,23 +87,23 @@ export default function OurDoctors() {
                   </h3>
 
                   {/* Specialization */}
-                  <p className="text-blue-700 text-sm font-medium">
+                  <p className="text-[#4baa7d] text-sm font-medium">
                     {doc.specialization}
                   </p>
 
                   {/* Qualification */}
-                  <p className="text-blue-600 text-xs">{doc.qualification}</p>
+                  <p className="text-[#4baa7d] text-xs">{doc.qualification}</p>
 
                   {/* Divider */}
-                  <div className="w-full h-px bg-blue-100" />
+                  <div className="w-full h-px bg-[#e1f0ff]" />
 
                   {/* Expertise */}
                   {doc.expertise && (
                     <div>
-                      <p className="font-semibold text-blue-900 text-sm mb-1">
+                      <p className="font-semibold text-[#2d69ff] text-sm mb-1">
                         Areas of Expertise
                       </p>
-                      <ul className="list-disc list-inside text-blue-700 text-sm space-y-1">
+                      <ul className="list-disc list-inside text-[#4baa7d] text-sm space-y-1">
                         {doc.expertise.split("\n").map((item, i) => (
                           <li key={i}>{item}</li>
                         ))}
@@ -113,7 +113,7 @@ export default function OurDoctors() {
 
                   {/* Bio */}
                   {(doc.bio || doc.description) && (
-                    <p className="text-blue-800 text-sm leading-relaxed">
+                    <p className="text-[#4baa7d] text-sm leading-relaxed">
                       {doc.bio || doc.description}
                     </p>
                   )}
@@ -121,10 +121,10 @@ export default function OurDoctors() {
                   {/* Achievements */}
                   {doc.achievements && (
                     <div>
-                      <p className="font-semibold text-blue-900 text-sm mb-1">
+                      <p className="font-semibold text-[#2d69ff] text-sm mb-1">
                         Honors & Awards
                       </p>
-                      <ul className="list-disc list-inside text-blue-700 text-sm space-y-1">
+                      <ul className="list-disc list-inside text-[#4baa7d] text-sm space-y-1">
                         {doc.achievements.split("\n").map((item, i) => (
                           <li key={i}>{item}</li>
                         ))}
@@ -135,10 +135,10 @@ export default function OurDoctors() {
                   {/* International Training */}
                   {doc.internationalTraining && (
                     <div>
-                      <p className="font-semibold text-blue-900 text-sm mb-1">
+                      <p className="font-semibold text-[#2d69ff] text-sm mb-1">
                         International Training
                       </p>
-                      <ul className="list-disc list-inside text-blue-700 text-sm space-y-1">
+                      <ul className="list-disc list-inside text-[#4baa7d] text-sm space-y-1">
                         {doc.internationalTraining
                           .split("\n")
                           .map((item, i) => (
@@ -151,10 +151,10 @@ export default function OurDoctors() {
                   {/* Publications */}
                   {doc.publications && (
                     <div>
-                      <p className="font-semibold text-blue-900 text-sm mb-1">
+                      <p className="font-semibold text-[#2d69ff] text-sm mb-1">
                         Publications
                       </p>
-                      <ul className="list-disc list-inside text-blue-700 text-sm space-y-1">
+                      <ul className="list-disc list-inside text-[#4baa7d] text-sm space-y-1">
                         {doc.publications.split("\n").map((item, i) => (
                           <li key={i}>{item}</li>
                         ))}

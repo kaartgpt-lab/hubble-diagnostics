@@ -29,7 +29,7 @@ export default function About() {
     <>
       {/* About Header */}
       <motion.section
-        className="w-full bg-blue-950 text-white py-6 md:py-10"
+        className="w-full bg-[#2d69ff] text-white py-6 md:py-10"
         initial="hidden"
         animate="visible"
         variants={sectionVariant}
@@ -48,7 +48,7 @@ export default function About() {
           <div className="mt-2 md:mt-0">
             <button
               onClick={() => (window.location.href = "/contact")}
-              className="bg-white text-blue-950 font-semibold px-4 py-2 rounded-sm hover:bg-blue-100 transition text-m"
+              className="bg-white text-[#2d69ff] font-semibold px-4 py-2 rounded-sm hover:bg-[#e1f0ff] transition text-m"
             >
               Contact Us
             </button>

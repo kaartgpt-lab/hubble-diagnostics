@@ -31,7 +31,7 @@ export default function HomeDoctors() {
 
   return (
     <motion.section
-      className="w-full bg-blue-950 py-16"
+      className="w-full bg-[#2d69ff] py-16"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -54,7 +54,7 @@ export default function HomeDoctors() {
           {homeDoctors.map((doc) => (
             <motion.div
               key={doc.id}
-              className="group bg-white text-blue-950 rounded-xl overflow-hidden flex flex-col text-center"
+              className="group bg-white text-[#2d69ff] rounded-xl overflow-hidden flex flex-col text-center"
               variants={card}
               whileHover={{
                 y: -10,
@@ -85,21 +85,21 @@ export default function HomeDoctors() {
               <div className="p-6 flex flex-col items-center">
                 <div className="mt-2 font-semibold text-lg">{doc.name}</div>
 
-                <div className="text-blue-700 text-sm mt-1">
+                <div className="text-[#4baa7d] text-sm mt-1">
                   {doc.specialization}
                 </div>
 
-                <div className="text-blue-600 text-xs mt-2 mb-6">
+                <div className="text-[#4baa7d] text-xs mt-2 mb-6">
                   {doc.qualification}
                 </div>
 
                 {/* Learn More Button */}
                 <motion.button
                   onClick={() => (window.location.href = "/ourdoctors")}
-                  className="relative overflow-hidden border border-blue-900 text-blue-900 px-6 py-2 rounded-md text-sm font-medium"
+                  className="relative overflow-hidden border border-[#2d69ff] text-[#2d69ff] px-6 py-2 rounded-md text-sm font-medium"
                   whileHover={{
                     scale: 1.08,
-                    backgroundColor: "#0f172a",
+                    backgroundColor: "#4baa7d",
                     color: "#ffffff",
                   }}
                   whileTap={{ scale: 0.95 }}

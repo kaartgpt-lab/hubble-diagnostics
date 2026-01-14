@@ -38,7 +38,7 @@ export default function Home() {
         viewport={{ once: true, amount: 0.2 }}
       >
         <div className="container mx-auto px-4 max-w-3xl text-center">
-          <h2 className="text-3xl text-blue-950 font-bold mb-6">
+          <h2 className="text-3xl text-[#2d69ff] font-bold mb-6">
             About Hubble
           </h2>
           <h2 className="text-2xl text-gray-700 mb-4">
@@ -62,10 +62,10 @@ export default function Home() {
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="
-    border-2 border-blue-950 text-blue-950
-    font-semibold px-6 py-2 rounded-md
-    bg-transparent
-  "
+              border-2 border-[#2d69ff] text-[#2d69ff]
+              font-semibold px-6 py-2 rounded-md
+              bg-transparent
+            "
           >
             Meet our Specialists
           </motion.button>
@@ -74,7 +74,7 @@ export default function Home() {
 
       {/* Numbers */}
       <motion.section
-        className="w-full py-20 bg-blue-950 text-white"
+        className="w-full py-20 bg-[#2d69ff] text-white"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
@@ -149,10 +149,10 @@ export default function Home() {
             },
           }}
         >
-          <h3 className="text-sm font-semibold text-blue-900 uppercase tracking-widest mb-2">
+          <h3 className="text-sm font-semibold text-[#2d69ff] uppercase tracking-widest mb-2">
             Why Choose Us?
           </h3>
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-950 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-6">
             The Hubble Advantage
           </h2>
           <p className="text-gray-700 text-lg">
@@ -180,7 +180,7 @@ export default function Home() {
           ].map(([icon, title], i) => (
             <motion.div
               key={i}
-              className="group bg-gray-50 text-blue-950 rounded-xl p-8 flex flex-col items-center text-center relative overflow-hidden"
+              className="group bg-gray-50 text-[#2d69ff] rounded-xl p-8 flex flex-col items-center text-center relative overflow-hidden"
               variants={{
                 hidden: { opacity: 0, y: 40, scale: 0.96 },
                 visible: {
@@ -206,7 +206,7 @@ export default function Home() {
               }}
             >
               {/* Hover Glow */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-t from-blue-100/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-t from-[#e1f0ff]/50 via-transparent to-transparent" />
 
               {/* Icon */}
               <motion.div
@@ -240,10 +240,10 @@ export default function Home() {
         viewport={{ once: true, amount: 0.2 }}
       >
         <div className="container mx-auto px-4 sm:px-8 text-center max-w-3xl">
-          <h3 className="text-sm font-semibold text-blue-900 uppercase tracking-widest mb-2">
+          <h3 className="text-sm font-semibold text-[#2d69ff] uppercase tracking-widest mb-2">
             Our Vision
           </h3>
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-950 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-6">
             Technology, Compassion, and Clinical Excellence
           </h2>
           <p className="text-gray-700 text-lg leading-relaxed">
@@ -262,7 +262,7 @@ export default function Home() {
         <Testimonials />
       </motion.div>
 
-      {/* Instagram */}
+      {/* Instagram – Images Only */}
       <motion.section
         className="w-full bg-gray-100 py-16"
         variants={fadeUp}
@@ -271,11 +271,11 @@ export default function Home() {
         viewport={{ once: true, amount: 0.2 }}
       >
         <div className="w-full px-2 sm:px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-950 mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-8 text-center">
             Instagram
           </h2>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
             {[
               "https://www.instagram.com/p/DLXmJ9ESrsB/",
               "https://www.instagram.com/p/DGAkSPCS3gR/",
@@ -286,17 +286,26 @@ export default function Home() {
             ].map((url, i) => (
               <motion.div
                 key={i}
-                className="overflow-hidden border border-gray-200 bg-white h-[420px] sm:h-[440px] lg:h-[480px]"
-                variants={fadeUp}
-                transition={{ delay: i * 0.05 }}
+                className="relative overflow-hidden rounded-md bg-black aspect-square"
+                whileHover={{ scale: 1.04 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
               >
-                <iframe
-                  src={`${url}embed`}
-                  allow="encrypted-media"
-                  className="w-full h-full"
-                  frameBorder="0"
-                  scrolling="no"
-                />
+                {/* HARD-CROPPED IMAGE ZONE */}
+                <div className="absolute inset-0 overflow-hidden">
+                  <iframe
+                    src={`${url}embed/?hidecaption=1`}
+                    className="
+        absolute
+        left-0
+        -top-[64px]
+        w-full
+        h-[520px]
+      "
+                    frameBorder="0"
+                    scrolling="no"
+                    allow="encrypted-media"
+                  />
+                </div>
               </motion.div>
             ))}
           </div>
@@ -306,9 +315,9 @@ export default function Home() {
               href="https://www.instagram.com/hubble.health/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white font-medium px-6 py-3 rounded-sm transition"
+              className="inline-flex items-center gap-2 bg-[#2d69ff] hover:bg-[#4baa7d] text-white font-medium px-6 py-3 rounded-sm transition"
             >
-              <FaInstagram className="w-5 h-5 text-white" />
+              <FaInstagram className="w-5 h-5" />
               Visit Our Instagram
             </a>
           </div>

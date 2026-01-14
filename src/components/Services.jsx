@@ -53,7 +53,7 @@ export default function Services() {
         className="px-8 text-center max-w-3xl mx-auto"
         variants={sectionVariant}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-blue-950 mb-3">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-3">
           Services We Offer
         </h2>
         <p className="text-gray-700 mb-12 text-center">
@@ -72,7 +72,7 @@ export default function Services() {
             key={s.slug}
             variants={cardVariant}
             onClick={() => navigate(`/services/${s.slug}`)}
-            className="group bg-blue-950 text-white p-6 sm:p-8 md:p-10 text-center cursor-pointer relative overflow-hidden"
+            className="group bg-[#2d69ff] text-white p-6 sm:p-8 md:p-10 text-center cursor-pointer relative overflow-hidden"
             whileHover={{
               y: -12,
               scale: 1.04,
@@ -87,7 +87,7 @@ export default function Services() {
             }}
           >
             {/* Floating highlight glow */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent" />
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-t from-[#2d69ff]/40 via-transparent to-transparent" />
 
             {/* Content */}
             <motion.h3
@@ -99,7 +99,7 @@ export default function Services() {
             </motion.h3>
 
             <motion.p
-              className="relative z-10 text-sm sm:text-base text-blue-100 leading-snug"
+              className="relative z-10 text-sm sm:text-base text-[#e1f0ff] leading-snug"
               whileHover={{ y: -2 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >

@@ -30,7 +30,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           Advanced. <br />
-          <span className="text-blue-500">Accurate.</span> <br />
+          <span className="text-[#4baa7d]">Accurate.</span> <br />
           Assured.
         </motion.h1>
 
@@ -41,7 +41,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
         >
-          <span className="font-semibold text-sm sm:text-base text-blue-400 block mb-1">
+          <span className="font-semibold text-sm sm:text-base text-[#4baa7d] block mb-1">
             Kanpur’s First Zero-Radiation Diagnostic Centre
           </span>
           World-class Fetal Medicine, Radiology, and Pathology — powered by
@@ -59,14 +59,14 @@ export default function Hero() {
           <div className="flex gap-3 justify-start">
             <Link
               to="/contact"
-              className="bg-blue-950 hover:bg-blue-800 px-4 py-2 rounded-md font-medium text-sm shadow transition"
+              className="bg-[#2d69ff] hover:bg-[#4baa7d] px-4 py-2 rounded-md font-medium text-sm shadow transition"
             >
               Book Appointment
             </Link>
 
             <Link
               to="/services"
-              className="border border-white px-4 py-2 rounded-md font-medium text-sm hover:bg-white hover:text-blue-950 transition"
+              className="border border-white px-4 py-2 rounded-md font-medium text-sm hover:bg-white hover:text-[#2d69ff] transition"
             >
               View Services
             </Link>
