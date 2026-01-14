@@ -58,7 +58,7 @@ export default function OurDoctors() {
 
       {/* Doctors Grid */}
       <motion.section
-        className="w-full bg-gray-100 py-12"
+        className="w-full bg-[#e1f0ff] py-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}

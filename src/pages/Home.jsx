@@ -31,7 +31,7 @@ export default function Home() {
 
       {/* About Section */}
       <motion.section
-        className="py-16 bg-gray-100"
+        className="py-16 bg-[#e1f0ff]"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
@@ -132,7 +132,7 @@ export default function Home() {
 
       {/* Why Choose Us */}
       <motion.section
-        className="w-full py-20 bg-white"
+        className="w-full py-20 bg-[#e1f0ff]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -180,7 +180,7 @@ export default function Home() {
           ].map(([icon, title], i) => (
             <motion.div
               key={i}
-              className="group bg-gray-50 text-[#2d69ff] rounded-xl p-8 flex flex-col items-center text-center relative overflow-hidden"
+              className="group bg-white text-[#2d69ff] rounded-xl p-8 flex flex-col items-center text-center relative overflow-hidden"
               variants={{
                 hidden: { opacity: 0, y: 40, scale: 0.96 },
                 visible: {
@@ -233,7 +233,7 @@ export default function Home() {
 
       {/* Vision */}
       <motion.section
-        className="w-full py-16 bg-white"
+        className="w-full py-16 bg-[#e1f0ff]"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
@@ -264,7 +264,7 @@ export default function Home() {
 
       {/* Instagram – Images Only */}
       <motion.section
-        className="w-full bg-gray-100 py-16"
+        className="w-full bg-[#e1f0ff] py-16"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"

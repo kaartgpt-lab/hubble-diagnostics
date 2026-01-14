@@ -62,7 +62,7 @@ export default function FAQsPage() {
 
   return (
     <motion.main
-      className="w-full bg-gray-100 min-h-screen py-16"
+      className="w-full bg-[#e1f0ff] min-h-screen py-16"
       initial="hidden"
       animate="visible"
       variants={pageVariant}

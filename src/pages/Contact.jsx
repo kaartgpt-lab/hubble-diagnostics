@@ -89,7 +89,7 @@ ${formData.message}
 
       {/* Contact Section */}
       <motion.section
-        className="w-full py-16 bg-gray-50"
+        className="w-full py-16 bg-[#e1f0ff]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}

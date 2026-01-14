@@ -33,7 +33,7 @@ export default function YouTubeSection() {
 
   return (
     <motion.section
-      className="w-full bg-gray-100 py-16"
+      className="w-full bg-[#e1f0ff] py-16"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}

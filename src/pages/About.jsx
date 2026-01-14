@@ -73,7 +73,7 @@ export default function About() {
 
       {/* Info Section */}
       <motion.section
-        className="w-full bg-gray-100 py-16"
+        className="w-full bg-[#e1f0ff] py-16"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -96,7 +96,7 @@ export default function About() {
 
       {/* Full-width YouTube Video */}
       <motion.section
-        className="w-full bg-gray-100 py-8 sm:py-16"
+        className="w-full bg-[#e1f0ff] py-8 sm:py-16"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}

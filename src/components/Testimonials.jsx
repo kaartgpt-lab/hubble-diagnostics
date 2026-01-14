@@ -81,7 +81,7 @@ export default function Testimonials() {
 
   return (
     <motion.section
-      className="w-full bg-gray-100 py-20 relative overflow-hidden"
+      className="w-full bg-[#e1f0ff] py-20 relative overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}

@@ -53,7 +53,7 @@ export default function Services() {
 
       {/* Services Grid */}
       <motion.section
-        className="bg-gray-100 py-16"
+        className="bg-[#e1f0ff] py-16"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}

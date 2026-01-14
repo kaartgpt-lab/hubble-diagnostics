@@ -42,7 +42,7 @@ const sectionVariant = {
 export default function FoundationPage() {
   return (
     <motion.main
-      className="w-full bg-gray-100 min-h-screen"
+      className="w-full bg-[#e1f0ff] min-h-screen"
       variants={pageVariant}
       initial="hidden"
       animate="visible"
@@ -79,7 +79,7 @@ export default function FoundationPage() {
 
       {/* Full-width YouTube Video */}
       <motion.section
-        className="w-full bg-gray-100 py-8 px-48 sm:py-16"
+        className="w-full bg-[#e1f0ff] py-8 px-48 sm:py-16"
         variants={sectionVariant}
         initial="hidden"
         whileInView="visible"

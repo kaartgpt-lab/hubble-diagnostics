@@ -6,7 +6,7 @@ export default function Blogs() {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-gray-100 py-16 w-full">
+    <section className="bg-[#e1f0ff] py-16 w-full">
       <div className="px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-3">
           Latest Blogs

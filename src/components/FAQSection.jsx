@@ -15,7 +15,7 @@ export default function HomeFAQs() {
   const generalCategory = faqs.find((cat) => cat.category === "General");
 
   return (
-    <section className="w-full bg-gray-100 py-16">
+    <section className="w-full bg-[#e1f0ff] py-16">
       <div className="container mx-auto px-4 sm:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-10 text-center">
           Frequently Asked Questions

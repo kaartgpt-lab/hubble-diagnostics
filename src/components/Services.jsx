@@ -42,7 +42,7 @@ export default function Services() {
 
   return (
     <motion.section
-      className="bg-gray-100 py-20 w-full overflow-hidden"
+      className="bg-[#e1f0ff] py-20 w-full overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
