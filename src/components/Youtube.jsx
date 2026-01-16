@@ -5,17 +5,48 @@ import { FaYoutube, FaPlay } from "react-icons/fa";
 /* ----------------------------
    Animation Variants
 ---------------------------- */
+
+// Parent stagger
 const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.18,
     },
   },
 };
 
-const item = {
-  hidden: { opacity: 0, y: 30 },
+// Heading slide from top
+const heading = {
+  hidden: { opacity: 0, y: -40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+// Card slide-in (direction based on index)
+const card = {
+  hidden: (i) => ({
+    opacity: 0,
+    x: i % 2 === 0 ? -50 : 50,
+    scale: 0.96,
+  }),
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: {
+      duration: 0.75,
+      ease: "easeOut",
+    },
+  },
+};
+
+// Button slide from bottom
+const button = {
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
@@ -42,7 +73,7 @@ export default function YouTubeSection() {
       {/* Heading */}
       <motion.h2
         className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-8 text-center"
-        variants={item}
+        variants={heading}
       >
         YouTube
       </motion.h2>
@@ -55,10 +86,11 @@ export default function YouTubeSection() {
         {videos.map((url, index) => (
           <motion.div
             key={index}
+            custom={index}
+            variants={card}
             className="relative aspect-video rounded-lg overflow-hidden bg-black group"
-            variants={item}
             whileHover={{
-              scale: 1.04,
+              scale: 1.05,
               y: -6,
               boxShadow: "0px 18px 35px rgba(0,0,0,0.25)",
             }}
@@ -93,7 +125,7 @@ export default function YouTubeSection() {
       </motion.div>
 
       {/* Channel Button */}
-      <motion.div className="flex justify-center mt-12" variants={item}>
+      <motion.div className="flex justify-center mt-12" variants={button}>
         <motion.a
           href="https://www.youtube.com/@hubblehealth"
           target="_blank"
@@ -110,7 +142,7 @@ export default function YouTubeSection() {
             damping: 18,
           }}
         >
-          <FaYoutube className="text-red-500 text-xl" />
+          <FaYoutube className="text-white text-xl" />
           Visit Our YouTube Channel
         </motion.a>
       </motion.div>

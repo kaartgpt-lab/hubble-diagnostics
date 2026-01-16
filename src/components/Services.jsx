@@ -4,17 +4,20 @@ import { motion } from "framer-motion";
 import services from "../data/services";
 
 /* ----------------------------
-   Animation variants
+   Animation Variants
 ---------------------------- */
+
+// Section fade + lift
 const sectionVariant = {
   hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1, ease: "easeOut" },
+    transition: { duration: 0.9, ease: "easeOut" },
   },
 };
 
+// Stagger container
 const containerVariant = {
   hidden: {},
   visible: {
@@ -24,10 +27,17 @@ const containerVariant = {
   },
 };
 
+// Card slide-in (alternate left / right)
 const cardVariant = {
-  hidden: { opacity: 0, y: 40, scale: 0.96 },
+  hidden: (i) => ({
+    opacity: 0,
+    x: i % 2 === 0 ? -60 : 60,
+    y: 20,
+    scale: 0.96,
+  }),
   visible: {
     opacity: 1,
+    x: 0,
     y: 0,
     scale: 1,
     transition: {
@@ -56,7 +66,7 @@ export default function Services() {
         <h2 className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-3">
           Services We Offer
         </h2>
-        <p className="text-gray-700 mb-12 text-center">
+        <p className="text-gray-700 mb-12">
           Our services are beyond measurements and so is our commitment towards
           our patients.
         </p>
@@ -67,9 +77,10 @@ export default function Services() {
         className="grid grid-cols-2 md:grid-cols-4 lg:flex lg:w-full gap-[2px]"
         variants={containerVariant}
       >
-        {services.map((s) => (
+        {services.map((s, index) => (
           <motion.div
             key={s.slug}
+            custom={index}
             variants={cardVariant}
             onClick={() => navigate(`/services/${s.slug}`)}
             className="group bg-[#2d69ff] text-white p-6 sm:p-8 md:p-10 text-center cursor-pointer relative overflow-hidden"
@@ -86,7 +97,7 @@ export default function Services() {
               damping: 22,
             }}
           >
-            {/* Floating highlight glow */}
+            {/* Hover glow */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-t from-[#2d69ff]/40 via-transparent to-transparent" />
 
             {/* Content */}

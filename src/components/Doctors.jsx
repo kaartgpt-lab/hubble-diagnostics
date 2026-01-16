@@ -13,10 +13,17 @@ const container = {
   },
 };
 
-const card = {
-  hidden: { opacity: 0, y: 50, scale: 0.96 },
+// Slide-in card (direction controlled via custom)
+const slideCard = {
+  hidden: (direction) => ({
+    opacity: 0,
+    x: direction === "left" ? -80 : 80,
+    y: 40,
+    scale: 0.96,
+  }),
   visible: {
     opacity: 1,
+    x: 0,
     y: 0,
     scale: 1,
     transition: {
@@ -41,21 +48,23 @@ export default function HomeDoctors() {
         {/* Heading */}
         <motion.h1
           className="text-4xl font-bold text-gray-200 mb-12 text-center"
-          variants={card}
+          variants={slideCard}
+          custom="left"
         >
           Our Doctors
         </motion.h1>
 
         {/* Grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-8"
           variants={container}
         >
-          {homeDoctors.map((doc) => (
+          {homeDoctors.map((doc, index) => (
             <motion.div
               key={doc.id}
               className="group bg-white text-[#2d69ff] rounded-xl overflow-hidden flex flex-col text-center"
-              variants={card}
+              variants={slideCard}
+              custom={index % 2 === 0 ? "left" : "right"}
               whileHover={{
                 y: -10,
                 scale: 1.02,
