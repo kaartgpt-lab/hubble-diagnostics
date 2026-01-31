@@ -55,7 +55,7 @@ const faqs = [
       {
         question: "How long does it take to get test results?",
         answer:
-          "Most test results are available within 24–48 hours. Some specialized tests may take longer, and our staff will inform you accordingly.",
+          "Most test results are available within 24–48 hours. Some specialized tests may take longer, and our staff will inform you accordingly. Pregnancy Reports in 30 mins",
       },
       {
         question: "Can I access my reports online?",

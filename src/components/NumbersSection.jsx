@@ -1,9 +1,9 @@
 export default function NumbersSection() {
   const stats = [
     ["15+", "Years of Expertise"],
-    ["50,000+", "Patients Served"],
+    ["1,00,000+", "Patients Served"],
     ["100%", "Radiation-Free Care"],
-    ["24–48 hrs", "Report Turnaround"],
+    ["24-48 hrs", "Report Turnaround"],
   ];
 
   return (
@@ -15,7 +15,7 @@ export default function NumbersSection() {
             className="animate-[slideUp_0.8s_ease-out_forwards] opacity-0"
             style={{ animationDelay: `${i * 0.2}s` }}
           >
-            <div className="text-4xl font-bold mb-2">{value}</div>
+            <div className="text-3xl font-bold mb-2">{value}</div>
             <p className="text-sm tracking-wide opacity-90">{label}</p>
           </div>
         ))}

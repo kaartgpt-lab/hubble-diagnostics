@@ -64,13 +64,14 @@ export default function Services() {
             <motion.div key={s.slug} custom={i} variants={cardVariant}>
               <Link
                 to={`/services/${s.slug}`}
-                className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden border border-gray-200"
+                className="block bg-white rounded-xl hover:shadow-md transition-shadow duration-200 overflow-hidden border border-gray-200 h-full"
               >
                 <img
                   src={s.hero}
                   alt={s.title}
                   className="w-full h-48 object-cover"
                 />
+
                 <div className="p-5">
                   <h3 className="text-[#2d69ff] font-semibold text-lg mb-2">
                     {s.title}

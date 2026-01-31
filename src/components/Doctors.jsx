@@ -94,11 +94,11 @@ export default function HomeDoctors() {
               <div className="p-6 flex flex-col items-center">
                 <div className="mt-2 font-semibold text-lg">{doc.name}</div>
 
-                <div className="text-[#4baa7d] text-sm mt-1">
+                <div className="text-black text-sm mt-1">
                   {doc.specialization}
                 </div>
 
-                <div className="text-[#4baa7d] text-xs mt-2 mb-6">
+                <div className="text-gray-800 text-xs mt-2 mb-6">
                   {doc.qualification}
                 </div>
 

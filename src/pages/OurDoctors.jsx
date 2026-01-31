@@ -87,12 +87,12 @@ export default function OurDoctors() {
                   </h3>
 
                   {/* Specialization */}
-                  <p className="text-[#4baa7d] text-sm font-medium">
+                  <p className="text-black text-sm font-medium">
                     {doc.specialization}
                   </p>
 
                   {/* Qualification */}
-                  <p className="text-[#4baa7d] text-xs">{doc.qualification}</p>
+                  <p className="text-gray-800 text-xs">{doc.qualification}</p>
 
                   {/* Divider */}
                   <div className="w-full h-px bg-[#e1f0ff]" />
@@ -103,7 +103,7 @@ export default function OurDoctors() {
                       <p className="font-semibold text-[#2d69ff] text-sm mb-1">
                         Areas of Expertise
                       </p>
-                      <ul className="list-disc list-inside text-[#4baa7d] text-sm space-y-1">
+                      <ul className="list-disc list-inside text-gray-800 text-sm space-y-1">
                         {doc.expertise.split("\n").map((item, i) => (
                           <li key={i}>{item}</li>
                         ))}
@@ -113,7 +113,7 @@ export default function OurDoctors() {
 
                   {/* Bio */}
                   {(doc.bio || doc.description) && (
-                    <p className="text-[#4baa7d] text-sm leading-relaxed">
+                    <p className="text-gray-800 text-sm leading-relaxed">
                       {doc.bio || doc.description}
                     </p>
                   )}
@@ -124,7 +124,7 @@ export default function OurDoctors() {
                       <p className="font-semibold text-[#2d69ff] text-sm mb-1">
                         Honors & Awards
                       </p>
-                      <ul className="list-disc list-inside text-[#4baa7d] text-sm space-y-1">
+                      <ul className="list-disc list-inside text-gray-800 text-sm space-y-1">
                         {doc.achievements.split("\n").map((item, i) => (
                           <li key={i}>{item}</li>
                         ))}
@@ -138,7 +138,7 @@ export default function OurDoctors() {
                       <p className="font-semibold text-[#2d69ff] text-sm mb-1">
                         International Training
                       </p>
-                      <ul className="list-disc list-inside text-[#4baa7d] text-sm space-y-1">
+                      <ul className="list-disc list-inside text-gray-800 text-sm space-y-1">
                         {doc.internationalTraining
                           .split("\n")
                           .map((item, i) => (
@@ -154,7 +154,7 @@ export default function OurDoctors() {
                       <p className="font-semibold text-[#2d69ff] text-sm mb-1">
                         Publications
                       </p>
-                      <ul className="list-disc list-inside text-[#4baa7d] text-sm space-y-1">
+                      <ul className="list-disc list-inside text-gray-800 text-sm space-y-1">
                         {doc.publications.split("\n").map((item, i) => (
                           <li key={i}>{item}</li>
                         ))}

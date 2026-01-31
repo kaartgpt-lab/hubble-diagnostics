@@ -137,9 +137,9 @@ export default function Hero() {
           >
             <h3 className="font-semibold text-sm mb-1">Opening Hours</h3>
             <p className="text-gray-800 leading-tight">
-              <span className="font-medium">Mon – Sat:</span> 10am – 7pm
+              <span className="font-medium">Mon – Sat:</span> 9am – 7pm
               <br />
-              <span className="font-medium">Sun:</span> 12pm – 7pm
+              <span className="font-medium">Sun:</span> 9pm – 6pm
             </p>
           </div>
         </motion.div>
