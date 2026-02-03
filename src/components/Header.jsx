@@ -12,9 +12,19 @@ export default function Header() {
     { label: "Home", to: "/" },
     { label: "Hubble Education", to: "/foundation" },
     { label: "Our Doctors", to: "/ourdoctors" },
-    // { label: "FAQs", to: "/faqs" },
     { label: "About Us", to: "/about" },
   ];
+
+  // ✅ Reusable underline animation classes
+  const underlineBase =
+    "relative inline-block font-medium text-gray-200 transition-colors duration-300";
+
+  const underlineAnim =
+    "after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-gray-200 " +
+    "after:scale-x-0 after:origin-left after:transition-transform after:duration-300 after:ease-out " +
+    "hover:after:scale-x-100";
+
+  const underlineActive = "after:scale-x-100";
 
   return (
     <header className="sticky top-0 z-50 bg-[#2d69ff] text-gray-200 shadow-md">
@@ -29,16 +39,14 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <div key={link.to} className="relative">
+            <div key={link.to} className="relative flex items-center">
               <NavLink
                 to={link.to}
                 className={({ isActive }) =>
-                  `relative font-medium hover:text-gray-200 transition ${
-                    isActive
-                      ? "after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-gray-200"
-                      : ""
+                  `${underlineBase} ${underlineAnim} ${
+                    isActive ? underlineActive : ""
                   }`
                 }
               >
@@ -47,10 +55,10 @@ export default function Header() {
 
               {/* Insert Services dropdown right after Foundation */}
               {link.label === "Hubble Education" && (
-                <div className="inline-block ml-4 relative">
+                <div className="inline-block ml-6 relative">
                   <button
                     onClick={() => setOpen((v) => !v)}
-                    className="font-medium hover:text-gray-200 transition"
+                    className={`${underlineBase} ${underlineAnim}`}
                   >
                     Services ▾
                   </button>

@@ -61,7 +61,7 @@ export default function Services() {
       >
         <div className="container mx-auto px-6 sm:px-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
-            <motion.div key={s.slug} custom={i} variants={cardVariant}>
+            //<motion.div key={s.slug} custom={i} variants={cardVariant}>
               <Link
                 to={`/services/${s.slug}`}
                 className="block bg-white rounded-xl hover:shadow-md transition-shadow duration-200 overflow-hidden border border-gray-200 h-full"
@@ -81,7 +81,7 @@ export default function Services() {
                   </p>
                 </div>
               </Link>
-            </motion.div>
+           // </motion.div>
           ))}
         </div>
       </motion.section>
