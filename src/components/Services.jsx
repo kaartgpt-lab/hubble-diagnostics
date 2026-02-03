@@ -2,9 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import services from "../data/services";
+import { ArrowRight } from "lucide-react";
 
 /* ----------------------------
-   Animation Variants
+   Animation Variants (SAME)
 ---------------------------- */
 
 // Section fade + lift
@@ -52,73 +53,84 @@ export default function Services() {
 
   return (
     <motion.section
-      className="bg-[#e1f0ff] py-20 w-full overflow-hidden"
+      className="py-20 bg-gray-50 w-full overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={sectionVariant}
     >
-      {/* Heading */}
-      <motion.div
-        className="px-8 text-center max-w-3xl mx-auto"
-        variants={sectionVariant}
-      >
-        <h2 className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-3">
-          Services We Offer
-        </h2>
-        <p className="text-gray-700 mb-12">
-          Our services are beyond measurements and so is our commitment towards
-          our patients.
-        </p>
-      </motion.div>
+      <div className="container mx-auto px-6">
+        {/* Header Row (Gemini-style) */}
+        <motion.div
+          className="flex justify-between items-end mb-12 gap-6"
+          variants={sectionVariant}
+        >
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-2">
+              Our Services
+            </h2>
+            <p className="text-gray-600">
+              Our services are beyond measurements and so is our commitment
+              towards our patients.
+            </p>
+          </div>
 
-      {/* Services Grid */}
-      <motion.div
-        className="grid grid-cols-2 md:grid-cols-4 lg:flex lg:w-full gap-[2px]"
-        variants={containerVariant}
-      >
-        {services.map((s, index) => (
-          <motion.div
-            key={s.slug}
-            custom={index}
-            variants={cardVariant}
-            onClick={() => navigate(`/services/${s.slug}`)}
-            className="group bg-[#2d69ff] text-white p-6 sm:p-8 md:p-10 text-center cursor-pointer relative overflow-hidden"
-            whileHover={{
-              y: -12,
-              scale: 1.04,
-              boxShadow: "0px 28px 60px rgba(0,0,0,0.35)",
-              backgroundColor: "#0f1f4a",
-            }}
-            whileTap={{ scale: 0.96 }}
-            transition={{
-              type: "spring",
-              stiffness: 160,
-              damping: 22,
-            }}
+          {/* View All (desktop) */}
+          <button
+            onClick={() => navigate("/services")}
+            className="hidden md:flex text-[#2d69ff] font-semibold items-center gap-2 hover:gap-3 transition-all"
           >
-            {/* Hover glow */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-t from-[#2d69ff]/40 via-transparent to-transparent" />
+            View all services <ArrowRight size={18} />
+          </button>
+        </motion.div>
 
-            {/* Content */}
-            <motion.h3
-              className="relative z-10 font-semibold text-lg sm:text-xl md:text-2xl mb-2 sm:mb-3"
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
+        {/* Services Grid (UI changed only) */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          variants={containerVariant}
+        >
+          {services.map((s, index) => (
+            <motion.div
+              key={s.slug}
+              custom={index}
+              variants={cardVariant}
+              onClick={() => navigate(`/services/${s.slug}`)}
+              className="group bg-white rounded-2xl p-8 text-left cursor-pointer border border-gray-200 hover:border-[#2d69ff]/40 hover:shadow-xl transition-all duration-300"
+              whileHover={{ y: -8, scale: 1.01 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 160, damping: 22 }}
             >
-              {s.title}
-            </motion.h3>
+              {/* Title */}
+              <motion.h3
+                className="font-bold text-lg text-gray-900 mb-2 group-hover:text-[#2d69ff] transition-colors"
+                whileHover={{ y: -2 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                {s.title}
+              </motion.h3>
 
-            <motion.p
-              className="relative z-10 text-sm sm:text-base text-[#e1f0ff] leading-snug"
-              whileHover={{ y: -2 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-            >
-              {s.intro}
-            </motion.p>
-          </motion.div>
-        ))}
-      </motion.div>
+              {/* Intro */}
+              <motion.p
+                className="text-sm text-gray-600 leading-relaxed"
+                whileHover={{ y: -1 }}
+                transition={{ duration: 0.1, ease: "easeOut" }}
+              >
+                {s.intro}
+              </motion.p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* View All (mobile) */}
+        <div className="mt-8 text-center md:hidden">
+          <button
+            onClick={() => navigate("/services")}
+            className="text-[#2d69ff] font-semibold"
+          >
+            View all services →
+          </button>
+        </div>
+      </div>
     </motion.section>
   );
 }

@@ -43,7 +43,7 @@ const slideUp = {
 
 export default function Hero() {
   return (
-    <section className="relative w-full sm:pt-45 text-zinc-900 flex items-center overflow-hidden">
+    <section className="relative w-full sm:pt-45 text-zinc-900 flex items-center overflow-x-hidden">
       {/* Background Video */}
       <video
         autoPlay
@@ -97,13 +97,14 @@ export default function Hero() {
           className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4"
           variants={slideUp}
         >
-          {/* Buttons – always visible */}
-          <div className="flex gap-2 sm:gap-3">
+          <div className="flex w-full ">
+              {/* Buttons – always visible */}
+              <div className="flex  gap-2 sm:gap-3">
             <Link
               to="/contact"
               className="
                 bg-[#2d69ff] hover:bg-[#4baa7d] text-white
-                px-3 py-1.5 text-xs
+                px-3 py-0.5 text-xs max-h-fit
                 sm:px-4 sm:py-2 sm:text-sm
                 rounded-md font-medium shadow transition
               "
@@ -114,7 +115,7 @@ export default function Hero() {
             <Link
               to="/services"
               className="
-                border border-gray-200 text-gray-200
+                border border-gray-200 text-gray-200 max-h-fit
                 px-3 py-1.5 text-xs
                 sm:px-4 sm:py-2 sm:text-sm
                 rounded-md font-medium
@@ -130,8 +131,8 @@ export default function Hero() {
           <div
             className="
               hidden sm:block
-              bg-white/20 backdrop-blur-lg
-              p-3 text-sm
+              bg-white/50 backdrop-blur-lg
+              p-3 text-sm 
               rounded-md shadow max-w-[180px]
             "
           >
@@ -142,6 +143,9 @@ export default function Hero() {
               <span className="font-medium">Sun:</span> 9pm – 6pm
             </p>
           </div>
+          </div>
+        
+          
         </motion.div>
       </motion.div>
     </section>

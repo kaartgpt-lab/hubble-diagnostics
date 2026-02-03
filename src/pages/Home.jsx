@@ -15,13 +15,16 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <NumbersSection />
-      <YouTubeSection />
+     
       <Doctors />
+      
       <Services />
       <WhyChooseUs />
+       <YouTubeSection />
+      <InstagramSection />
       <VisionSection />
       <Testimonials />
-      <InstagramSection />
+      
     </>
   );
 }
