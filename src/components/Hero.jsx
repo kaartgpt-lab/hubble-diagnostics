@@ -43,7 +43,7 @@ const slideUp = {
 
 export default function Hero() {
   return (
-    <section className="relative w-full sm:pt-45 text-zinc-900 flex items-center overflow-x-hidden">
+    <section className="relative  w-full sm:pt-45 text-zinc-900 flex items-center overflow-x-hidden">
       {/* Background Video */}
       <video
         autoPlay
@@ -69,11 +69,12 @@ export default function Hero() {
             sm:text-3xl sm:leading-snug sm:mb-2
             md:text-4xl
             font-bold
+            text-white
           "
           variants={slideLeft}
         >
           Advanced. <br />
-          <span className="text-[#4baa7d]">Accurate.</span> <br />
+          <span className="text-white">Accurate.</span> <br />
           Assured.
         </motion.h1>
 
@@ -81,7 +82,7 @@ export default function Hero() {
         <motion.p
           className="
             hidden sm:block
-            text-sm text-gray-800 mb-4 max-w-xl
+            text-sm text-white mb-4 max-w-xl
           "
           variants={slideRight}
         >
@@ -128,24 +129,66 @@ export default function Hero() {
           </div>
 
           {/* Opening Hours – desktop only */}
-          <div
-            className="
-              hidden sm:block
-              bg-white/50 backdrop-blur-lg
-              p-3 text-sm 
-              rounded-md shadow max-w-[180px]
-            "
-          >
-            <h3 className="font-semibold text-sm mb-1">Opening Hours</h3>
-            <p className="text-gray-800 leading-tight">
-              <span className="font-medium">Mon – Sat:</span> 9am – 7pm
-              <br />
-              <span className="font-medium">Sun:</span> 9pm – 6pm
-            </p>
+         <div
+  className="
+    hidden sm:block
+    bg-white/50 backdrop-blur-lg
+    border border-white/30
+    p-4 text-sm
+    rounded-xl shadow-lg
+    max-w-[220px]
+  "
+>
+  {/* Header */}
+  <div className="flex items-center gap-3 mb-3 border-b border-white/30 pb-2">
+    <div className="p-2 bg-[#2d69ff]/10 rounded-lg text-[#2d69ff]">
+      {/* Clock Icon */}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </svg>
+    </div>
+
+    <div>
+      <h3 className="font-semibold text-sm text-gray-900">Opening Hours</h3>
+
+      {/* Open Today */}
+      <div className="flex items-center gap-2 mt-1">
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-60"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-green-600"></span>
+        </span>
+        <span className="text-[10px] font-bold text-green-700 uppercase tracking-wide">
+          Open Today
+        </span>
+      </div>
+    </div>
+  </div>
+
+  {/* Timings */}
+  <div className="space-y-2 text-xs text-gray-800">
+    <div className="flex justify-between border-b gap-2 border-white/30 pb-2">
+      <span className="font-medium text-gray-700">Mon – Sat</span>
+      <span className="font-semibold">9:00 AM – 7:00 PM</span>
+    </div>
+
+    <div className="flex justify-between pt-1">
+      <span className="font-medium text-gray-700">Sunday</span>
+      <span className="font-semibold">9:00 AM – 6:00 PM</span>
+    </div>
+  </div>
+</div>
           </div>
-          </div>
-        
-          
         </motion.div>
       </motion.div>
     </section>
