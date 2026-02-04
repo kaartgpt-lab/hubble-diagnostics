@@ -117,7 +117,7 @@ export default function Testimonials() {
         onClick={() => scrollBy(-320)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="absolute left-3 top-1/2 -translate-y-1/2 bg-[#2d69ff] text-white p-3 rounded-full shadow-lg hidden sm:flex"
+        className="absolute left-2 top-3/5 -translate-y-1/2 bg-[#2d69ff] text-white p-3 rounded-full shadow-lg hidden sm:flex"
       >
         ←
       </motion.button>
@@ -127,7 +127,7 @@ export default function Testimonials() {
         onClick={() => scrollBy(320)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="absolute right-3 top-1/2 -translate-y-1/2 bg-[#2d69ff] text-white p-3 rounded-full shadow-lg hidden sm:flex"
+        className="absolute right-2 top-3/5 -translate-y-1/2 bg-[#2d69ff] text-white p-3 rounded-full shadow-lg hidden sm:flex"
       >
         →
       </motion.button>

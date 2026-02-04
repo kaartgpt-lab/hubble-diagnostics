@@ -43,7 +43,7 @@ const slideUp = {
 
 export default function Hero() {
   return (
-    <section className="relative  w-full sm:pt-45 text-zinc-900 flex items-center overflow-x-hidden">
+    <section className="relative w-full min-h-[600px] flex items-start sm:items-center overflow-hidden">
       {/* Background Video */}
       <video
         autoPlay
@@ -55,38 +55,40 @@ export default function Hero() {
         <source src="/hero-vid.mp4" type="video/mp4" />
       </video>
 
+      {/* Overlay (for readability) */}
+      <div className="absolute inset-0 bg-black/40" />
+
       {/* Content */}
       <motion.div
-        className="relative z-10 w-full px-3 sm:px-8 py-4 sm:py-8 flex flex-col"
+        className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-8 pt-20 sm:pt-24 md:pt-20 pb-10 flex flex-col"
         variants={container}
         initial="hidden"
         animate="visible"
       >
-        {/* Heading – always visible */}
+        {/* Heading */}
         <motion.h1
           className="
-            text-lg leading-tight mb-4
-            sm:text-3xl sm:leading-snug sm:mb-2
-            md:text-4xl
-            font-bold
-            text-white
+            text-3xl leading-tight mb-4
+            sm:text-5xl sm:leading-tight sm:mb-3
+            md:text-6xl
+            font-bold text-white
           "
           variants={slideLeft}
         >
           Advanced. <br />
-          <span className="text-white">Accurate.</span> <br />
+          <span className="text-[#4baa7d]">Accurate.</span> <br />
           Assured.
         </motion.h1>
 
-        {/* Description – desktop only */}
+        {/* Description */}
         <motion.p
           className="
-            hidden sm:block
-            text-sm text-white mb-4 max-w-xl
+            text-base text-white/90 max-w-2xl leading-relaxed
+            mb-4 sm:mb-5 md:mb-4 lg:mb-3
           "
           variants={slideRight}
         >
-          <span className="font-semibold text-base text-[#4baa7d] block mb-1">
+          <span className="font-semibold text-lg text-[#4baa7d] block mb-2">
             Kanpur’s First Zero-Radiation Diagnostic Centre
           </span>
           World-class Fetal Medicine, Radiology, and Pathology — powered by
@@ -95,19 +97,22 @@ export default function Hero() {
 
         {/* Buttons + Hours */}
         <motion.div
-          className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4"
+          className="
+            flex flex-col gap-6
+            sm:flex-row sm:items-end sm:justify-between
+            w-full
+          "
           variants={slideUp}
         >
-          <div className="flex w-full ">
-              {/* Buttons – always visible */}
-              <div className="flex  gap-2 sm:gap-3">
+          {/* Buttons */}
+          <div className="flex flex-wrap gap-3">
             <Link
               to="/contact"
               className="
                 bg-[#2d69ff] hover:bg-[#4baa7d] text-white
-                px-3 py-0.5 text-xs max-h-fit
-                sm:px-4 sm:py-2 sm:text-sm
-                rounded-md font-medium shadow transition
+                px-5 py-2.5 text-sm sm:text-base
+                rounded-lg font-semibold shadow-lg shadow-blue-500/30
+                transition-all
               "
             >
               Book Appointment
@@ -116,78 +121,80 @@ export default function Hero() {
             <Link
               to="/services"
               className="
-                border border-gray-200 text-gray-200 max-h-fit
-                px-3 py-1.5 text-xs
-                sm:px-4 sm:py-2 sm:text-sm
-                rounded-md font-medium
-                hover:bg-gray-200 hover:text-[#2d69ff]
-                transition
+                bg-white/10 hover:bg-white
+                text-white hover:text-[#2d69ff]
+                border border-white/30
+                px-5 py-2.5 text-sm sm:text-base
+                rounded-lg font-semibold
+                transition-all backdrop-blur-sm
               "
             >
               View Services
             </Link>
           </div>
 
-          {/* Opening Hours – desktop only */}
-         <div
-  className="
-    hidden sm:block
-    bg-white/50 backdrop-blur-lg
-    border border-white/30
-    p-4 text-sm
-    rounded-xl shadow-lg
-    max-w-[220px]
-  "
->
-  {/* Header */}
-  <div className="flex items-center gap-3 mb-3 border-b border-white/30 pb-2">
-    <div className="p-2 bg-[#2d69ff]/10 rounded-lg text-[#2d69ff]">
-      {/* Clock Icon */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="12" r="10" />
-        <polyline points="12 6 12 12 16 14" />
-      </svg>
-    </div>
+          {/* Opening Hours */}
+          <div
+            className="
+              sm:w-[280px] w-80
+              bg-white/85 backdrop-blur-lg
+              border border-white/30
+              p-4 sm:p-5
+              rounded-2xl shadow-xl
+            "
+          >
+            {/* Header */}
+            <div className="flex items-center gap-3 mb-3 border-b border-gray-200/60 pb-3">
+              <div className="p-2 bg-[#2d69ff]/10 rounded-lg text-[#2d69ff]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
 
-    <div>
-      <h3 className="font-semibold text-sm text-gray-900">Opening Hours</h3>
+              <div>
+                <h3 className="font-bold text-gray-900 text-sm sm:text-base">
+                  Opening Hours
+                </h3>
 
-      {/* Open Today */}
-      <div className="flex items-center gap-2 mt-1">
-        <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-60"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-green-600"></span>
-        </span>
-        <span className="text-[10px] font-bold text-green-700 uppercase tracking-wide">
-          Open Today
-        </span>
-      </div>
-    </div>
-  </div>
+                <div className="flex items-center gap-2 mt-1">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-60"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-600"></span>
+                  </span>
+                  <span className="text-[10px] font-bold text-green-700 uppercase tracking-wide">
+                    Open Today
+                  </span>
+                </div>
+              </div>
+            </div>
 
-  {/* Timings */}
-  <div className="space-y-2 text-xs text-gray-800">
-    <div className="flex justify-between border-b gap-2 border-white/30 pb-2">
-      <span className="font-medium text-gray-700">Mon – Sat</span>
-      <span className="font-semibold">9:00 AM – 7:00 PM</span>
-    </div>
+            {/* Timings */}
+            <div className="space-y-2 text-sm text-gray-800">
+              <div className="flex justify-between items-center">
+                <span className="font-medium text-gray-600">Mon – Sat</span>
+                <span className="font-bold text-gray-900">
+                  9:00 AM – 7:00 PM
+                </span>
+              </div>
 
-    <div className="flex justify-between pt-1">
-      <span className="font-medium text-gray-700">Sunday</span>
-      <span className="font-semibold">9:00 AM – 6:00 PM</span>
-    </div>
-  </div>
-</div>
+              <div className="flex justify-between items-center pt-2 border-t border-gray-200/60">
+                <span className="font-medium text-gray-600">Sunday</span>
+                <span className="font-bold text-gray-900">
+                  9:00 AM – 6:00 PM
+                </span>
+              </div>
+            </div>
           </div>
         </motion.div>
       </motion.div>
