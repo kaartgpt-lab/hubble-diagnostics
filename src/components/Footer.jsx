@@ -160,7 +160,7 @@ export default function Footer() {
             {/* Book Appointment */}
             <button
               onClick={() => navigate("/contact")}
-              className="w-full bg-[#4baa7d] text-white font-semibold px-4 py-2 rounded-sm hover:bg-[#2d69ff] transition"
+              className="w-fit bg-[#4baa7d] text-white font-semibold px-4 py-2 rounded-sm hover:bg-[#2d69ff] transition"
             >
               Book an Appointment
             </button>
