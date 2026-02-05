@@ -1,6 +1,7 @@
 import React from "react";
 import machines from "../data/machines";
 import ClinicTour from "../components/360Tour";
+import AnnouncementBar from "../components/AnnouncementBar";
 /* ----------------------------
    Internal Icon Components
 ---------------------------- */
@@ -256,7 +257,11 @@ export default function About() {
             </div>
           </div>
         </div>
-
+        {/* FETAL FACE ANNOUNCEMENT */}
+        <AnnouncementBar text="Advanced 3D Fetal Face Printing Available •" 
+        textColor="black"
+        textSize="text-4xl font-bold word-spacing-5px"
+        />
         {/* ADVANCED MACHINES SECTION - UPDATED LAYOUT */}
 <div className="my-16 w-full">
   <h2 className="text-3xl font-bold text-[#2d69ff] mb-8 text-center">

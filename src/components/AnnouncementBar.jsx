@@ -1,6 +1,9 @@
-export default function AnnouncementBar() {
-  const text = "Kanpur's First  Zero Radiation Center \u00A0 • \u00A0";
-
+export default function AnnouncementBar({
+  text = "Kanpur's First Zero Radiation Center  •  ",
+  textColor = "#2d69ff",
+  textSize = "text-sm",
+  wordSpacing = "0.2em",
+}) {
   return (
     <>
       <style>
@@ -25,17 +28,20 @@ export default function AnnouncementBar() {
         `}
       </style>
 
-      <div className="w-full bg-white text-[#2d69ff] marquee">
+      <div className="w-full bg-white marquee">
         <div className="py-1 marquee-track">
-          {/* repeated enough times */}
-          <span className="text-sm font-medium mx-6">{text}</span>
-          <span className="text-sm font-medium mx-6">{text}</span>
-          <span className="text-sm font-medium mx-6">{text}</span>
-          <span className="text-sm font-medium mx-6">{text}</span>
-          <span className="text-sm font-medium mx-6">{text}</span>
-          <span className="text-sm font-medium mx-6">{text}</span>
-          <span className="text-sm font-medium mx-6">{text}</span>
-          <span className="text-sm font-medium mx-6">{text}</span>
+          {Array.from({ length: 8 }).map((_, i) => (
+            <span
+              key={i}
+              className={`${textSize} font-medium mx-10`}
+              style={{
+                color: textColor,
+                wordSpacing: wordSpacing,
+              }}
+            >
+              {text}
+            </span>
+          ))}
         </div>
       </div>
     </>
