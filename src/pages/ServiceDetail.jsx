@@ -95,7 +95,7 @@ const slideCard = {
     x: 0,
     y: 0,
     scale: 1,
-    transition: { duration: 0.8, ease: "easeOut" },
+    transition: { duration: 1.8, ease: "easeOut" },
   },
 };
 
@@ -195,7 +195,7 @@ export default function ServiceDetail() {
               {service.sections.map((section, idx) => (
                 <motion.div
                   key={idx}
-                  className="group bg-white rounded-[2rem] p-8 shadow-lg border border-gray-100 flex flex-col"
+                  className="group bg-white rounded-[2rem] p-8 py-12 shadow-lg border border-gray-100 flex flex-col"
                   variants={slideCard}
                   custom={idx % 2 === 0 ? "left" : "right"}
                   whileHover={{
