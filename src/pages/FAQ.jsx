@@ -72,7 +72,7 @@ export default function FAQsPage() {
           Frequently Asked Questions
         </h1>
 
-        {faqs.map((cat, catIdx) => (
+        {faqs.general.map((cat, catIdx) => (
           <motion.div
             key={catIdx}
             className="mb-10"
