@@ -36,8 +36,8 @@
   id: 2,
   name: "Dr. Ritu Mishra",
   specialization:
-    "Obstetrician, Gynaecologist & Fetal Medicine Specialist",
-  qualification: "MBBS, MS (Obstetrics & Gynaecology)",
+    "Fetal Medicine Specialist",
+  qualification: "MS (Obstetrics & Gynaecology)",
 
   expertise:
     "Areas of Expertise:\n" +

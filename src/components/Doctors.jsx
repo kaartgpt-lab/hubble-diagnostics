@@ -38,7 +38,7 @@ export default function HomeDoctors() {
 
   return (
     <motion.section
-      className="w-full bg-[#2d69ff] py-16"
+      className="w-full bg-[#122056] py-16"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -62,7 +62,7 @@ export default function HomeDoctors() {
           {homeDoctors.map((doc, index) => (
             <motion.div
               key={doc.id}
-              className="group bg-white text-[#2d69ff] rounded-xl overflow-hidden flex flex-col text-center"
+              className="group bg-white text-[#122056] rounded-xl overflow-hidden flex flex-col text-center"
               variants={slideCard}
               custom={index % 2 === 0 ? "left" : "right"}
               whileHover={{
@@ -105,7 +105,7 @@ export default function HomeDoctors() {
                 {/* Learn More Button */}
                 <motion.button
                   onClick={() => (window.location.href = "/ourdoctors")}
-                  className="relative overflow-hidden border border-[#2d69ff] text-[#2d69ff] px-6 py-2 rounded-md text-sm font-medium"
+                  className="relative overflow-hidden border border-[#122056] text-[#122056] px-6 py-2 rounded-md text-sm font-medium"
                   whileHover={{
                     scale: 1.08,
                     backgroundColor: "#4baa7d",

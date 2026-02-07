@@ -1,6 +1,6 @@
 export default function AnnouncementBar({
   text = "Kanpur's First Zero Radiation Center  •  ",
-  textColor = "#2d69ff",
+  textColor = "#122056",
   textSize = "text-sm",
   wordSpacing = "0.2em",
 }) {

@@ -5,7 +5,7 @@ import services from "../data/services.js";
 import faqs from "../data/faqs";
 
 /* ----------------------------
-   Internal Icons
+    Internal Icons
 ---------------------------- */
 const IconWrapper = ({
   children,
@@ -65,7 +65,7 @@ const ChevronDown = (props) => (
 );
 
 /* ----------------------------
-   Animation Variants
+    Animation Variants
 ---------------------------- */
 const stagger = {
   hidden: {},
@@ -120,7 +120,7 @@ export default function ServiceDetail() {
   return (
     <div className="bg-white min-h-screen overflow-x-hidden">
       {/* ================= HERO ================= */}
-      <section className="bg-[#2d69ff] py-16 text-white relative overflow-hidden">
+      <section className="bg-[#122056] py-16 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-16 -mt-16" />
         <div className="container mx-auto px-6 flex flex-col md:flex-row gap-8 items-center justify-between relative z-10">
           <motion.div variants={fadeUp} initial="hidden" animate="visible">
@@ -137,7 +137,7 @@ export default function ServiceDetail() {
           <motion.div variants={fadeUp} initial="hidden" animate="visible">
             <Link
               to="/contact"
-              className="bg-white text-[#2d69ff] font-bold px-8 py-3 rounded-xl shadow-lg hover:bg-blue-50 transition-all hover:-translate-y-1"
+              className="bg-white text-[#122056] font-bold px-8 py-3 rounded-xl shadow-lg hover:bg-blue-50 transition-all hover:-translate-y-1"
             >
               Contact Us
             </Link>
@@ -174,7 +174,7 @@ export default function ServiceDetail() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl font-bold mb-6 border-l-4 border-[#2d69ff] pl-4">
+              <h2 className="text-2xl font-bold mb-6 border-l-4 border-[#122056] pl-4">
                 About this Service
               </h2>
               <p className="text-gray-700 text-lg leading-relaxed">
@@ -206,7 +206,7 @@ export default function ServiceDetail() {
                 >
                   <div className="flex items-center gap-4 mb-6">
                     <motion.div
-                      className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#2d69ff]"
+                      className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#122056]"
                       whileHover={{ rotate: 6, scale: 1.15 }}
                     >
                       <Activity size={24} />
@@ -231,9 +231,9 @@ export default function ServiceDetail() {
                       >
                         <CheckCircle
                           size={18}
-                          className="text-[#4baa7d]"
+                          className="text-[#4baa7d] flex-shrink-0 mt-0.5"
                         />
-                        <span className="text-sm font-medium">
+                        <span className="text-sm font-medium leading-relaxed">
                           {item}
                         </span>
                       </motion.li>
@@ -261,13 +261,13 @@ export default function ServiceDetail() {
                 {service.bullets.map((b, i) => (
                   <motion.li
                     key={i}
-                    className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100 hover:border-blue-100 transition-colors"
+                    className="flex items-start gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100 hover:border-blue-100 transition-colors"
                     whileHover={{ y: -4, scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 160, damping: 20 }}
                   >
                     <ShieldCheck
                       size={20}
-                      className="text-[#2d69ff]"
+                      className="text-[#122056] flex-shrink-0 mt-0.5" // ADDED flex-shrink-0 and mt-0.5
                     />
                     <span className="text-gray-800 font-medium">
                       {b}
@@ -281,24 +281,24 @@ export default function ServiceDetail() {
           {/* ================= HIGHLIGHTS ================= */}
           {service.highlights && (
             <motion.div
-              className="mb-16 bg-[#eef7ff] rounded-3xl p-8 border-l-4 border-[#2d69ff]"
+              className="mb-16 bg-[#eef7ff] rounded-3xl p-8 border-l-4 border-[#122056]"
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
               <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <Star size={24} fill="#2d69ff" />
+                <Star size={24} fill="#122056" />
                 Why choose this service?
               </h3>
               <ul className="space-y-4">
                 {service.highlights.map((h, i) => (
-                  <li key={i} className="flex gap-3">
+                  <li key={i} className="flex items-start gap-3">
                     <ShieldCheck
                       size={18}
-                      className="text-[#4baa7d]"
+                      className="text-[#4baa7d] flex-shrink-0 mt-1"
                     />
-                    <span className="text-lg">{h}</span>
+                    <span className="text-lg leading-snug">{h}</span>
                   </li>
                 ))}
               </ul>
@@ -366,7 +366,7 @@ export default function ServiceDetail() {
           {/* Back */}
           <Link
             to="/services"
-            className="inline-flex items-center gap-2 font-bold text-[#2d69ff]"
+            className="inline-flex items-center gap-2 font-bold text-[#122056]"
           >
             <span className="rotate-180 bg-blue-50 p-2 rounded-full">
               <ArrowRight size={20} />

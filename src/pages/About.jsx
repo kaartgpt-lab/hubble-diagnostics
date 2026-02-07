@@ -113,7 +113,7 @@ export default function About() {
   return (
     <div className="animate-fade-in">
       {/* Page Header */}
-      <div className="bg-[#2d69ff] text-white py-5 text-center">
+      <div className="bg-[#122056] text-white py-5 text-center">
         <h1 className="text-4xl font-bold mb-4">About Us</h1>
         <p className="text-lg opacity-90 max-w-2xl mx-auto px-4">
           Combining clinical excellence with cutting-edge technology.
@@ -122,7 +122,7 @@ export default function About() {
 
       <div className="container  mx-auto px-6 py-16 max-w-7xl">
         <div className="max-w-4xl py-10 mx-auto prose lg:prose-xl text-gray-700 space-y-6">
-          <h2 className="text-2xl font-bold text-[#2d69ff] mb-2">
+          <h2 className="text-2xl font-bold text-[#122056] mb-2">
             About Hubble Health
           </h2>
 
@@ -157,9 +157,9 @@ export default function About() {
 
             <div className="bg-white/60 backdrop-blur-xl border border-white/60 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden relative">
               {/* Header */}
-              <h3 className="text-2xl font-bold text-[#2d69ff] mb-8 flex items-center gap-3 border-b border-gray-100/50 pb-4">
-                <div className="p-2 bg-blue-100 rounded-lg text-[#2d69ff]">
-                  <Star size={24} fill="#2d69ff" />
+              <h3 className="text-2xl font-bold text-[#122056] mb-8 flex items-center gap-3 border-b border-gray-100/50 pb-4">
+                <div className="p-2 bg-blue-100 rounded-lg text-[#122056]">
+                  <Star size={24} fill="#122056" />
                 </div>
                 Key Highlights
               </h3>
@@ -264,7 +264,7 @@ export default function About() {
         />
         {/* ADVANCED MACHINES SECTION - UPDATED LAYOUT */}
 <div className="my-16 w-full">
-  <h2 className="text-3xl font-bold text-[#2d69ff] mb-8 text-center">
+  <h2 className="text-3xl font-bold text-[#122056] mb-8 text-center">
     Advanced Technology
   </h2>
 

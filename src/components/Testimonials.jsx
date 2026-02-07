@@ -89,7 +89,7 @@ export default function Testimonials() {
     >
       {/* Heading */}
       <motion.h2
-        className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-12 text-center"
+        className="text-3xl md:text-4xl font-bold text-[#122056] mb-12 text-center"
         variants={sectionVariant}
       >
         What Our Patients Say
@@ -117,7 +117,7 @@ export default function Testimonials() {
         onClick={() => scrollBy(-320)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="absolute left-2 top-3/5 -translate-y-1/2 bg-[#2d69ff] text-white p-3 rounded-full shadow-lg hidden sm:flex"
+        className="absolute left-2 top-3/5 -translate-y-1/2 bg-[#122056] text-white p-3 rounded-full shadow-lg hidden sm:flex"
       >
         ←
       </motion.button>
@@ -127,7 +127,7 @@ export default function Testimonials() {
         onClick={() => scrollBy(320)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="absolute right-2 top-3/5 -translate-y-1/2 bg-[#2d69ff] text-white p-3 rounded-full shadow-lg hidden sm:flex"
+        className="absolute right-2 top-3/5 -translate-y-1/2 bg-[#122056] text-white p-3 rounded-full shadow-lg hidden sm:flex"
       >
         →
       </motion.button>
@@ -174,7 +174,7 @@ function TestimonialCard({ testimonial, renderStars }) {
       </div>
 
       <div className="relative z-10 mt-5">
-        <h4 className="font-semibold text-[#2d69ff]">{testimonial.name}</h4>
+        <h4 className="font-semibold text-[#122056]">{testimonial.name}</h4>
         <div className="text-sm">{renderStars(testimonial.rating)}</div>
       </div>
     </motion.div>

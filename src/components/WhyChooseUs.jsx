@@ -64,10 +64,10 @@ export default function WhyChooseUs() {
       {/* Heading */}
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h3 className="text-sm font-semibold text-[#2d69ff] uppercase tracking-widest mb-2">
+          <h3 className="text-sm font-semibold text-[#122056] uppercase tracking-widest mb-2">
             Why Choose Us?
           </h3>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#122056] mb-4">
             The Hubble Advantage
           </h2>
           <p className="text-gray-600 text-lg">
@@ -87,7 +87,7 @@ export default function WhyChooseUs() {
               variants={cardVariant}
               className="text-center p-8 bg-gray-50 rounded-2xl hover:bg-[#e1f0ff] transition-colors duration-300"
             >
-              <div className="text-[#2d69ff] mb-4 flex justify-center">
+              <div className="text-[#122056] mb-4 flex justify-center">
                 {feat.icon}
               </div>
 

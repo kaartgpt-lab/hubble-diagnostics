@@ -6,7 +6,7 @@ export default function Footer() {
   const navigate = useNavigate();
 
   return (
-    <footer className="w-full bg-[#2d69ff] text-white">
+    <footer className="w-full bg-[#122056] text-white">
       {/* Main Footer */}
       <section className="py-12 px-6 sm:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -139,7 +139,7 @@ export default function Footer() {
             <div className="flex flex-wrap gap-2 mb-3">
               <button
                 onClick={() => navigate("/contact")}
-                className="bg-white text-[#2d69ff] font-semibold px-4 py-2 rounded-sm hover:bg-[#e1f0ff] transition"
+                className="bg-white text-[#122056] font-semibold px-4 py-2 rounded-sm hover:bg-[#e1f0ff] transition"
               >
                 Contact Us
               </button>
@@ -160,7 +160,7 @@ export default function Footer() {
             {/* Book Appointment */}
             <button
               onClick={() => navigate("/contact")}
-              className="w-fit bg-[#4baa7d] text-white font-semibold px-4 py-2 rounded-sm hover:bg-[#2d69ff] transition"
+              className="w-fit bg-[#4baa7d] text-white font-semibold px-4 py-2 rounded-sm hover:bg-[#122056] transition"
             >
               Book an Appointment
             </button>

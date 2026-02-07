@@ -24,7 +24,7 @@ export default function Services() {
     <>
       {/* Header Section */}
       <motion.section
-        className="bg-[#2d69ff] text-white py-6 md:py-10"
+        className="bg-[#122056] text-white py-6 md:py-10"
         initial="hidden"
         animate="visible"
         variants={sectionVariant}
@@ -43,7 +43,7 @@ export default function Services() {
           <div className="mt-2 md:mt-0">
             <button
               onClick={() => (window.location.href = "/contact")}
-              className="bg-white text-[#2d69ff] font-semibold px-4 py-2 rounded-sm hover:bg-[#e1f0ff] transition text-m"
+              className="bg-white text-[#122056] font-semibold px-4 py-2 rounded-sm hover:bg-[#e1f0ff] transition text-m"
             >
               Contact Us
             </button>
@@ -73,7 +73,7 @@ export default function Services() {
                 />
 
                 <div className="p-5">
-                  <h3 className="text-[#2d69ff] font-semibold text-lg mb-2">
+                  <h3 className="text-[#122056] font-semibold text-lg mb-2">
                     {s.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">

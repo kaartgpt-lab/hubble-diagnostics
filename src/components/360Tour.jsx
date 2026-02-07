@@ -49,7 +49,7 @@ const ClinicTour = () => {
   return (
     <div className="my-20 w-full overflow-hidden bg-gray-50 py-12">
       <div className="text-center mb-8">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 text-[#2d69ff] text-sm font-semibold mb-3">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 text-[#122056] text-sm font-semibold mb-3">
           <Image size={16} /> 360° Experience
         </div>
         <h2 className="text-3xl font-bold text-gray-900">Tour Our Facility</h2>

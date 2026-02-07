@@ -41,7 +41,7 @@ export default function OurDoctors() {
     >
       {/* ================= HERO ================= */}
       <motion.section
-        className="relative bg-[#2d69ff] py-20 text-white overflow-hidden"
+        className="relative bg-[#122056] py-20 text-white overflow-hidden"
         variants={heroVariant}
         initial="hidden"
         animate="visible"
@@ -91,7 +91,7 @@ export default function OurDoctors() {
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
                     {doc.name}
                   </h2>
-                  <p className="text-[#2d69ff] font-semibold text-lg md:text-xl mb-4">
+                  <p className="text-[#122056] font-semibold text-lg md:text-xl mb-4">
                     {doc.specialization}
                   </p>
 
