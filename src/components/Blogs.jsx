@@ -8,7 +8,7 @@ export default function Blogs() {
   return (
     <section className="bg-[#e1f0ff] py-16 w-full">
       <div className="px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-3">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#122056] mb-3">
           Latest Blogs
         </h2>
         <p className="text-gray-700 mb-10 max-w-2xl">
@@ -36,7 +36,7 @@ export default function Blogs() {
 
             {/* Blog Content */}
             <div className="mt-5">
-              <h3 className="text-xl font-semibold text-[#2d69ff] mb-2 group-hover:text-[#4baa7d] transition">
+              <h3 className="text-xl font-semibold text-[#122056] mb-2 group-hover:text-[#4baa7d] transition">
                 {b.title}
               </h3>
               <p className="text-gray-700 text-sm sm:text-base leading-relaxed line-clamp-3">

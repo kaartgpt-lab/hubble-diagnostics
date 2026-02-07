@@ -48,7 +48,7 @@ export default function FoundationPage() {
       animate="visible"
     >
       {/* Hero Section */}
-      <section className="w-full py-10 bg-[#2d69ff] text-white">
+      <section className="w-full py-10 bg-[#122056] text-white">
         <div className="container mx-auto px-6 sm:px-12 py-12 md:py-16 flex flex-col md:flex-row items-center md:items-start justify-between gap-6">
           <motion.div
             className="text-center md:text-left md:max-w-2xl"
@@ -68,7 +68,7 @@ export default function FoundationPage() {
               whileHover={{ scale: 1.06, y: -2 }}
               whileTap={{ scale: 0.96 }}
               transition={{ type: "spring", stiffness: 300, damping: 18 }}
-              className="bg-white text-[#2d69ff] font-semibold px-5 py-2.5 rounded-sm
+              className="bg-white text-[#122056] font-semibold px-5 py-2.5 rounded-sm
              hover:bg-[#e1f0ff] transition text-sm sm:text-base"
             >
               Contact Us

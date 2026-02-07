@@ -68,7 +68,7 @@ export default function FAQsPage() {
       variants={pageVariant}
     >
       <div className="container mx-auto px-4 sm:px-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-[#2d69ff] mb-12 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-[#122056] mb-12 text-center">
           Frequently Asked Questions
         </h1>
 
@@ -81,7 +81,7 @@ export default function FAQsPage() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <h2 className="text-2xl font-semibold text-[#2d69ff] mb-4">
+            <h2 className="text-2xl font-semibold text-[#122056] mb-4">
               {cat.category}
             </h2>
 
@@ -94,7 +94,7 @@ export default function FAQsPage() {
                   onClick={() => toggle(cat.category, idx)}
                 >
                   <div className="flex justify-between items-center">
-                    <h3 className="text-[#2d69ff] font-semibold text-lg">
+                    <h3 className="text-[#122056] font-semibold text-lg">
                       {faq.question}
                     </h3>
                     <span className="text-[#4baa7d] font-bold text-xl">

@@ -7,7 +7,7 @@ export default function AboutSection() {
     <section className="py-16 bg-[#e1f0ff] overflow-hidden">
       <div className="container mx-auto px-4 max-w-3xl text-center">
         {/* Heading – slide from left */}
-        <h2 className="text-3xl text-[#2d69ff] font-bold mb-6 animate-[slideInLeft_0.9s_ease-out_forwards]">
+        <h2 className="text-3xl text-[#122056] font-bold mb-6 animate-[slideInLeft_0.9s_ease-out_forwards]">
           About Hubble
         </h2>
 
@@ -31,9 +31,9 @@ export default function AboutSection() {
         {/* Button – fade up */}
         <button
           onClick={() => navigate("/ourdoctors")}
-          className="border-2 border-[#2d69ff] text-[#2d69ff]
+          className="border-2 border-[#122056] text-[#122056]
                      font-semibold px-6 py-2 rounded-md
-                     hover:bg-[#2d69ff] hover:text-white
+                     hover:bg-[#122056] hover:text-white
                      transition animate-[fadeUp_0.7s_ease-out_forwards]"
         >
           Meet our Specialists

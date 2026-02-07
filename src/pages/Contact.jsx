@@ -74,7 +74,7 @@ ${formData.message}
     <>
       {/* Hero Section */}
       <motion.section
-        className="w-full bg-[#2d69ff] text-white py-16"
+        className="w-full bg-[#122056] text-white py-16"
         initial="hidden"
         animate="visible"
         variants={sectionVariant}
@@ -98,14 +98,14 @@ ${formData.message}
         <div className="max-w-7xl mx-auto px-6 sm:px-12 grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Info + Map */}
           <motion.div className="space-y-6" variants={itemVariant}>
-            <h2 className="text-2xl font-semibold text-[#2d69ff]">
+            <h2 className="text-2xl font-semibold text-[#122056]">
               Contact Info
             </h2>
 
             <ul className="space-y-4 text-gray-700">
               {/* Mobile */}
               <li className="flex items-start gap-3">
-                <Smartphone className="w-5 h-5 text-[#2d69ff] mt-1" />
+                <Smartphone className="w-5 h-5 text-[#122056] mt-1" />
                 <span>
                   <strong>Mobile:</strong>{" "}
                   <a href="tel:+919044104040" className="hover:underline">
@@ -116,7 +116,7 @@ ${formData.message}
 
               {/* Landline */}
               <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#2d69ff] mt-1" />
+                <Phone className="w-5 h-5 text-[#122056] mt-1" />
                 <span>
                   <strong>Landline:</strong>{" "}
                   <span className="select-text">0512-7961554</span>
@@ -125,7 +125,7 @@ ${formData.message}
 
               {/* Email */}
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-[#2d69ff] mt-1" />
+                <Mail className="w-5 h-5 text-[#122056] mt-1" />
                 <span>
                   <strong>Email:</strong>{" "}
                   <a
@@ -139,7 +139,7 @@ ${formData.message}
 
               {/* Address */}
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#2d69ff] mt-1" />
+                <MapPin className="w-5 h-5 text-[#122056] mt-1" />
                 <span>
                   <strong>Address:</strong>
                   <br />
@@ -152,7 +152,7 @@ ${formData.message}
               </li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-[#2d69ff] mt-6">
+            <h3 className="text-xl font-semibold text-[#122056] mt-6">
               Location
             </h3>
 
@@ -171,7 +171,7 @@ ${formData.message}
 
           {/* Contact Form */}
           <motion.div variants={itemVariant}>
-            <h2 className="text-2xl font-semibold text-[#2d69ff] mb-4">
+            <h2 className="text-2xl font-semibold text-[#122056] mb-4">
               Send a Message
             </h2>
 

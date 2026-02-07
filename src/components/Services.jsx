@@ -66,7 +66,7 @@ export default function Services() {
           variants={sectionVariant}
         >
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2d69ff] mb-2">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#122056] mb-2">
               Our Services
             </h2>
             <p className="text-gray-600">
@@ -78,7 +78,7 @@ export default function Services() {
           {/* View All (desktop) */}
           <button
             onClick={() => navigate("/services")}
-            className="hidden md:flex text-[#2d69ff] font-semibold items-center gap-2 hover:gap-3 transition-all"
+            className="hidden md:flex text-[#122056] font-semibold items-center gap-2 hover:gap-3 transition-all"
           >
             View all services <ArrowRight size={18} />
           </button>
@@ -95,14 +95,14 @@ export default function Services() {
               custom={index}
               variants={cardVariant}
               onClick={() => navigate(`/services/${s.slug}`)}
-              className="group bg-white rounded-2xl p-8 text-left cursor-pointer border border-gray-200 hover:border-[#2d69ff]/40 hover:shadow-xl transition-all duration-300"
+              className="group bg-white rounded-2xl p-8 text-left cursor-pointer border border-gray-200 hover:border-[#122056]/40 hover:shadow-xl transition-all duration-300"
               whileHover={{ y: -8, scale: 1.01 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 160, damping: 22 }}
             >
               {/* Title */}
               <motion.h3
-                className="font-bold text-lg text-gray-900 mb-2 group-hover:text-[#2d69ff] transition-colors"
+                className="font-bold text-lg text-gray-900 mb-2 group-hover:text-[#122056] transition-colors"
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
@@ -125,7 +125,7 @@ export default function Services() {
         <div className="mt-8 text-center md:hidden">
           <button
             onClick={() => navigate("/services")}
-            className="text-[#2d69ff] font-semibold"
+            className="text-[#122056] font-semibold"
           >
             View all services →
           </button>
