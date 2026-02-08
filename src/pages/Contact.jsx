@@ -229,7 +229,7 @@ ${formData.message}
               <motion.button
                 variants={itemVariant}
                 type="submit"
-                className="bg-green-500 text-white font-semibold rounded-lg px-5 py-2.5 hover:bg-[#4baa7d] transition"
+                className="bg-blue-500 text-white font-semibold rounded-lg px-5 py-2.5 hover:bg-[#6395ee] transition"
               >
                 Submit on Whatsapp
               </motion.button>
