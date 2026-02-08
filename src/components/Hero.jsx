@@ -76,7 +76,7 @@ export default function Hero() {
           variants={slideLeft}
         >
           Advanced. <br />
-          <span className="text-[#4baa7d]">Accurate.</span> <br />
+          <span className="text-[#6395ee]">Accurate.</span> <br />
           Assured.
         </motion.h1>
 
@@ -88,7 +88,7 @@ export default function Hero() {
           "
           variants={slideRight}
         >
-          <span className="font-semibold text-lg text-[#4baa7d] block mb-2">
+          <span className="font-semibold text-lg text-[#6395ee] block mb-2">
             Kanpur’s First Zero-Radiation Diagnostic Centre
           </span>
           World-class Fetal Medicine, Radiology, and Pathology — powered by
@@ -109,7 +109,7 @@ export default function Hero() {
             <Link
               to="/contact"
               className="
-                bg-[#5B65DC] hover:bg-[#4baa7d] text-white
+                bg-[#5B65DC] hover:bg-[#6395ee] text-white
                 px-5 py-2.5 text-sm sm:text-base
                 rounded-lg font-semibold shadow-lg shadow-blue-500/30
                 transition-all
@@ -145,7 +145,7 @@ export default function Hero() {
           >
             {/* Header */}
             <div className="flex items-center gap-3 mb-3 border-b border-gray-200/60 pb-3">
-              <div className="p-2 bg-[#122056]/10 rounded-lg text-[#122056]">
+              <div className="p-2 bg-[#6395ee]/10 rounded-lg text-[#122056]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"

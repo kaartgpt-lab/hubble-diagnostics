@@ -32,7 +32,7 @@ export default function ServiceSections({ sections }) {
                   key={i}
                   className="flex items-start gap-2 text-gray-700 text-sm"
                 >
-                  <span className="mt-1 h-2 w-2 rounded-full bg-[#122056]" />
+                  <span className="mt-1 h-2 w-2 rounded-full bg-[#6395ee]" />
                   <span>{item}</span>
                 </li>
               ))}

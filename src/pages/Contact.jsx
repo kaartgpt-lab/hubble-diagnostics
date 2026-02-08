@@ -74,7 +74,7 @@ ${formData.message}
     <>
       {/* Hero Section */}
       <motion.section
-        className="w-full bg-[#122056] text-white py-16"
+        className="w-full bg-[#6395ee] text-white py-16"
         initial="hidden"
         animate="visible"
         variants={sectionVariant}

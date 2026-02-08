@@ -52,7 +52,7 @@ export default function HomeFAQs() {
         <div className="flex justify-center mt-8">
           <Link
             to="/faqs"
-            className="inline-block bg-[#122056] !text-white font-medium px-6 py-3 rounded-sm hover:bg-[#122056] transition"
+            className="inline-block bg-[#6395ee] !text-white font-medium px-6 py-3 rounded-sm hover:bg-[#6395ee] transition"
           >
             View All FAQs
           </Link>

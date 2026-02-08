@@ -57,7 +57,7 @@ export default function NumbersSection() {
   ];
 
   return (
-    <section className="w-full py-20 bg-[#122056] text-white overflow-hidden">
+    <section className="w-full py-20 bg-[#6395ee] text-white overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         {stats.map((stat, i) => (
           <div

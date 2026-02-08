@@ -48,7 +48,7 @@ export default function FoundationPage() {
       animate="visible"
     >
       {/* Hero Section */}
-      <section className="w-full py-10 bg-[#122056] text-white">
+      <section className="w-full py-10 bg-[#6395ee] text-white">
         <div className="container mx-auto px-6 sm:px-12 py-12 md:py-16 flex flex-col md:flex-row items-center md:items-start justify-between gap-6">
           <motion.div
             className="text-center md:text-left md:max-w-2xl"

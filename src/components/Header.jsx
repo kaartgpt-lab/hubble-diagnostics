@@ -27,7 +27,7 @@ export default function Header() {
   const underlineActive = "after:scale-x-100";
 
   return (
-    <header className="sticky top-0 z-50 bg-[#122056] text-gray-200 shadow-md">
+    <header className="sticky top-0 z-50 bg-[#6395ee] text-gray-200 shadow-md">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 text-white">
@@ -107,7 +107,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-[#122056] text-white px-4 py-4 border-t border-[#4baa7d]">
+        <div className="md:hidden bg-[#6395ee] text-white px-4 py-4 border-t border-[#4baa7d]">
           <ul className="flex flex-col gap-3">
             {links.map((link) => (
               <li key={link.to}>
@@ -131,7 +131,7 @@ export default function Header() {
               </button>
 
               {mobileServicesOpen && (
-                <div className="mt-2 ml-2 bg-[#122056] rounded-lg border border-[#4baa7d]">
+                <div className="mt-2 ml-2 bg-[#6395ee] rounded-lg border border-[#4baa7d]">
                   <ServicesDropdown
                     onNavigate={(href) => {
                       setMobileOpen(false);

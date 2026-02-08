@@ -40,7 +40,6 @@
   qualification: "MS (Obstetrics & Gynaecology)",
 
   expertise:
-    "Areas of Expertise:\n" +
     "Fetal Medicine & Advanced Ultrasound | " +
     "High-risk pregnancy care | " +
     "Fetal anomaly & Doppler scans | " +
