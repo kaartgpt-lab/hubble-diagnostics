@@ -120,7 +120,7 @@ export default function ServiceDetail() {
   return (
     <div className="bg-white min-h-screen overflow-x-hidden">
       {/* ================= HERO ================= */}
-      <section className="bg-[#122056] py-16 text-white relative overflow-hidden">
+      <section className="bg-[#6395ee] py-16 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-16 -mt-16" />
         <div className="container mx-auto px-6 flex flex-col md:flex-row gap-8 items-center justify-between relative z-10">
           <motion.div variants={fadeUp} initial="hidden" animate="visible">

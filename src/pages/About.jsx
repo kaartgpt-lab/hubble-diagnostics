@@ -113,7 +113,7 @@ export default function About() {
   return (
     <div className="animate-fade-in">
       {/* Page Header */}
-      <div className="bg-[#122056] text-white py-5 text-center">
+      <div className="bg-[#6395ee] text-white py-5 text-center">
         <h1 className="text-4xl font-bold mb-4">About Us</h1>
         <p className="text-lg opacity-90 max-w-2xl mx-auto px-4">
           Combining clinical excellence with cutting-edge technology.
@@ -238,10 +238,10 @@ export default function About() {
             </div>
 
             {/* Vision Card */}
-            <div className="group bg-gradient-to-br from-green-50 to-white border border-green-100 p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-green-200/20 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-green-300/30 transition-colors"></div>
+            <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200/20 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-blue-300/30 transition-colors"></div>
 
-              <div className="w-12 h-12 bg-[#4baa7d] rounded-xl flex items-center justify-center text-white mb-6 shadow-green-200 shadow-lg group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white mb-6 shadow-blue-200 shadow-lg group-hover:scale-110 transition-transform">
                 <Eye size={24} />
               </div>
 

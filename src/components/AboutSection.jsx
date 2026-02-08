@@ -33,7 +33,7 @@ export default function AboutSection() {
           onClick={() => navigate("/ourdoctors")}
           className="border-2 border-[#122056] text-[#122056]
                      font-semibold px-6 py-2 rounded-md
-                     hover:bg-[#122056] hover:text-white
+                     hover:bg-[#6395ee] hover:text-white
                      transition animate-[fadeUp_0.7s_ease-out_forwards]"
         >
           Meet our Specialists

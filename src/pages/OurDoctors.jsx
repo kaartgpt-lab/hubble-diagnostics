@@ -41,7 +41,7 @@ export default function OurDoctors() {
     >
       {/* ================= HERO ================= */}
       <motion.section
-        className="relative bg-[#122056] py-20 text-white overflow-hidden"
+        className="relative bg-[#6395ee] py-20 text-white overflow-hidden"
         variants={heroVariant}
         initial="hidden"
         animate="visible"
@@ -102,7 +102,7 @@ export default function OurDoctors() {
 
                 {/* Bio / Description */}
                 {(doc.bio || doc.description) && (
-                  <div className="mb-8 pl-5 border-l-4 border-[#4baa7d] bg-gray-50/60 rounded-r-xl">
+                  <div className="mb-8 pl-5 border-l-4 border-[#122056] bg-gray-50/60 rounded-r-xl">
                     <p className="italic text-gray-700 leading-relaxed">
                       {doc.bio || doc.description}
                     </p>
@@ -111,8 +111,8 @@ export default function OurDoctors() {
 
                 {/* Expertise */}
                 {doc.expertise && (
-                  <div className="mb-6 bg-green-50 border border-green-100 rounded-2xl p-5">
-                    <p className="font-semibold text-green-700 mb-3">
+                  <div className="mb-6 bg-blue-50 border border-blue-100 rounded-2xl p-5">
+                    <p className="font-semibold text-blue-700 mb-3">
                       Areas of Expertise
                     </p>
                     <ul className="list-disc list-inside text-gray-800 text-sm space-y-1">
@@ -124,8 +124,8 @@ export default function OurDoctors() {
                 )}
 
                {doc.achievements && (
-                    <div className="bg-yellow-50 border mb-6 border-yellow-100 rounded-xl p-4">
-                      <p className="font-semibold text-yellow-700 text-sm mb-2">
+                    <div className="bg-blue-50 border mb-6 border-blue-100 rounded-xl p-4">
+                      <p className="font-semibold text-blue-700 text-sm mb-2">
                         Honors & Awards
                       </p>
 

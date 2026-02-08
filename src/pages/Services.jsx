@@ -24,7 +24,7 @@ export default function Services() {
     <>
       {/* Header Section */}
       <motion.section
-        className="bg-[#122056] text-white py-6 md:py-10"
+        className="bg-[#6395ee] text-white py-6 md:py-10"
         initial="hidden"
         animate="visible"
         variants={sectionVariant}

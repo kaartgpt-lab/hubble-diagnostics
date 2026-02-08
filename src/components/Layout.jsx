@@ -8,7 +8,6 @@ export default function Layout() {
     <div
       style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
     >
-      <AnnouncementBar />
       <Header />
       <main style={{ flex: 1, background: "#fff" }}>
         <Outlet />

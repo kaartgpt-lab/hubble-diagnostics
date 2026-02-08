@@ -38,7 +38,7 @@ export default function HomeDoctors() {
 
   return (
     <motion.section
-      className="w-full bg-[#122056] py-16"
+      className="w-full bg-[#6395ee] py-16"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
